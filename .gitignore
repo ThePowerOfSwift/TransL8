@@ -1,0 +1,38 @@
+/TransL.paw
+/TransL/Podfile.lock
+/TransL/Pods/
+
+# OS X
+.DS_Store
+*.icloud
+
+# Xcode
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*/xcuserdata/
+xcuserdata/
+*.xccheckout
+*.xcworkspace
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+
+# AppCode
+.idea
+
+# Bundler
+.bundle
+
+# fastlane
+fastlane/build_output
+fastlane/test_output
+fastlane/report.xml
+
