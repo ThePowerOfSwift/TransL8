@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		09FD22EDD927F420D6141F1F /* Pods_TransL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB0E1217208711C670C3D28 /* Pods_TransL.framework */; };
+		DE1CD19E23AAEEC60028EEAF /* TranslationViewController+Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CD19D23AAEEC60028EEAF /* TranslationViewController+Clipboard.swift */; };
+		DE1CD1A023AAEF1D0028EEAF /* TranslationViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CD19F23AAEF1D0028EEAF /* TranslationViewController+Action.swift */; };
 		DEB1DFA323A7595B00ED0715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFA223A7595B00ED0715 /* AppDelegate.swift */; };
 		DEB1DFA523A7595B00ED0715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFA423A7595B00ED0715 /* SceneDelegate.swift */; };
 		DEB1DFA723A7595B00ED0715 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFA623A7595B00ED0715 /* TranslateViewController.swift */; };
@@ -32,6 +34,8 @@
 		791D1F3D965E7D470547D887 /* Pods-TransL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransL.debug.xcconfig"; path = "Target Support Files/Pods-TransL/Pods-TransL.debug.xcconfig"; sourceTree = "<group>"; };
 		9CB0E1217208711C670C3D28 /* Pods_TransL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B1DCCF245F9EAC2119BDAF /* Pods-TransL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransL.release.xcconfig"; path = "Target Support Files/Pods-TransL/Pods-TransL.release.xcconfig"; sourceTree = "<group>"; };
+		DE1CD19D23AAEEC60028EEAF /* TranslationViewController+Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationViewController+Clipboard.swift"; sourceTree = "<group>"; };
+		DE1CD19F23AAEF1D0028EEAF /* TranslationViewController+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationViewController+Action.swift"; sourceTree = "<group>"; };
 		DEB1DF9F23A7595B00ED0715 /* TransL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB1DFA223A7595B00ED0715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEB1DFA423A7595B00ED0715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				DEB1DFA623A7595B00ED0715 /* TranslateViewController.swift */,
+				DE1CD19F23AAEF1D0028EEAF /* TranslationViewController+Action.swift */,
+				DE1CD19D23AAEEC60028EEAF /* TranslationViewController+Clipboard.swift */,
 				DEE36B7C23AA3E4600785679 /* Engine.swift */,
 				DEB1DFD123A7909F00ED0715 /* TextPair.swift */,
 			);
@@ -287,6 +293,8 @@
 				DEB1DFD023A787BE00ED0715 /* Data+JSONDecode.swift in Sources */,
 				DEB1DFA723A7595B00ED0715 /* TranslateViewController.swift in Sources */,
 				DEB1DFA323A7595B00ED0715 /* AppDelegate.swift in Sources */,
+				DE1CD1A023AAEF1D0028EEAF /* TranslationViewController+Action.swift in Sources */,
+				DE1CD19E23AAEEC60028EEAF /* TranslationViewController+Clipboard.swift in Sources */,
 				DEB1DFCB23A7729800ED0715 /* UIView+Border.swift in Sources */,
 				DEB1DFA523A7595B00ED0715 /* SceneDelegate.swift in Sources */,
 			);
