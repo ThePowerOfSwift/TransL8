@@ -19,22 +19,20 @@ class Engine {
 	
   private let service = MoyaProvider<DeepLService>() // plugins: [NetworkLoggerPlugin(verbose: true)])
 
-	func translate(text: String, completion: @escaping (Result<String, TranslationError>) -> Void) {
+	func translate(_ sourcePair: TextPair, completion: @escaping (Result<TextPair, TranslationError>) -> Void) {
 		
-		let sourcePair = TranslationPair(sourceText: text, sourceLang: nil, destText: nil, destLang: PreferencesController.shared.lang)
-
 		if let cachedPair = PreferencesController.shared.pairCache.first(where: { $0 == sourcePair }) {
-			completion(.success(cachedPair.destText ?? ""))
+			completion(.success(cachedPair))
 		}
 		else {
-			service.request(.translate(text)) { result in
+			service.request(.translate(sourcePair.sourceText)) { result in
 				switch result {
 				case let .success(response):
 					if let resultContainer = try? response.data.decoded() as DeepL.TranslationContainer,
 						resultContainer.translations.count > 0 {
 						let destText = resultContainer.translations.compactMap({ $0.text }).joined(separator: "\n")
 						let sourceLang = resultContainer.translations.first!.detectedSourceLanguage
-						let pair = TranslationPair(sourceText: text, sourceLang: sourceLang, destText: destText, destLang: sourcePair.destLang)
+						let pair = TextPair(sourceText: sourcePair.sourceText, sourceLang: sourceLang, destText: destText, destLang: sourcePair.destLang)
 						
 						// store limited number of pairs into "cache"
 						var list = PreferencesController.shared.pairCache
@@ -45,7 +43,7 @@ class Engine {
 						}
 						PreferencesController.shared.pairCache = list
 
-						completion(.success(pair.destText ?? ""))
+						completion(.success(pair))
 					}
 					else {
 						completion(.failure(.empty))

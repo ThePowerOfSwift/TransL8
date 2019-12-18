@@ -22,5 +22,5 @@ class PreferencesController: NSObject {
 	
 	// pseudo cache
 	@Storage(key: "pairCache", defaultValue: [])
-  var pairCache: [TranslationPair]
+  var pairCache: [TextPair]
 }

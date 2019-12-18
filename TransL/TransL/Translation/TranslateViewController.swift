@@ -36,30 +36,29 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 	private lazy var enabledColor = UIView().tintColor
 	private lazy var disabledColor = UIColor.lightGray.withAlphaComponent(0.2)
 
-	private var textInput: String = "" {
+	var pair: TextPair = TextPair(sourceText: "", sourceLang: nil, destText: "", destLang: PreferencesController.shared.lang) {
 		didSet {
-			if textInputView.text != textInput {
-				textInputView.text = textInput
+			let source = pair.sourceText
+			if textInputView.text != source {
+				textInputView.text = source
 			}
-			let hasInput = !textInput.isEmpty
+			let hasInput = !pair.sourceText.isEmpty
 			clearInputButton.isHidden = !hasInput
 			translateButton.isEnabled = hasInput
 			translateButton.backgroundColor = hasInput ? enabledColor : disabledColor
-		}
-	}
-	
-	private var textOutput: String = "" {
-		didSet {
-			if textOutputView.text != textOutput {
-				textOutputView.text = textOutput
+
+			if let dest = pair.destText {
+				if textOutputView.text != dest {
+					textOutputView.text = dest
+				}
+				let hasOutput = !dest.isEmpty
+				clipboardOutputButton.isEnabled = hasOutput
+				shareOutputButton.isEnabled = hasOutput
+				speakOutputButton.isEnabled = hasOutput
+				clipboardOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
+				shareOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
+				speakOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
 			}
-			let hasOutput = !textOutputView.text.isEmpty
-			clipboardOutputButton.isEnabled = hasOutput
-			shareOutputButton.isEnabled = hasOutput
-			speakOutputButton.isEnabled = hasOutput
-			clipboardOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
-			shareOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
-			speakOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
 			
 			let hasClips = !PreferencesController.shared.pairCache.isEmpty
 			clipboardInputButton.isEnabled = hasClips
@@ -67,21 +66,23 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 			clipboardTriangleView.isHidden = !hasClips
 		}
 	}
-	
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		textInput = ""
-		textOutput = ""
-		clipboardInputButton.addInteraction(UIContextMenuInteraction(delegate: self))
+		let interaction = UIContextMenuInteraction(delegate: self)
+		clipboardInputButton.addInteraction(interaction)
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
-		if textInput.isEmpty {
+
+		// preferences could have changed lang
+		pair = pair.with(destLang: PreferencesController.shared.lang)
+
+		if pair.sourceText.isEmpty {
 			if let text = UIPasteboard.general.string, !text.isEmpty {
-				textInput = text
+				pair = pair.with(sourceText: text)
 			}
 			else {
 				textInputView.becomeFirstResponder()
@@ -90,7 +91,7 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 	}
 	
 	func textViewDidChange(_ textView: UITextView) {
-		textInput = textView.text
+		pair = pair.with(sourceText: textView.text)
 	}
 }
 
@@ -108,15 +109,17 @@ extension TranslateViewController: UIContextMenuInteractionDelegate {
 			for idx in 0..<min(10, list.count) {
 				let pair = list[idx]
 				let action = UIAction(title: pair.sourceText) { [weak self] action in
-					self?.textInput = pair.sourceText
-					self?.textOutput = pair.destText ?? ""
+					guard let self = self else { return }
+
+					self.pair = pair
 				}
 				actions.append(action)
 			}
 			let action = UIAction(title: "Clear", image: UIImage(systemName: "trash"), attributes: .destructive) { [weak self] action in
+				guard let self = self else { return }
+
 				PreferencesController.shared.pairCache = []
-				self?.textInput = ""
-				self?.textOutput = ""
+				self.pair = self.pair.with(sourceText: "", destText: "")
 			}
 			actions.append(action)
 			return UIMenu(title: "", children: actions)
@@ -128,16 +131,14 @@ extension TranslateViewController: UIContextMenuInteractionDelegate {
 extension TranslateViewController {
 	
 	@IBAction func clearInput() {
-		textInput = ""
-		textOutput = ""
+		self.pair = self.pair.with(sourceText: "", destText: "")
 		textInputView.becomeFirstResponder()
 	}
 
 	@IBAction func copyInput() {
 		guard let pair = PreferencesController.shared.pairCache.first else { return }
-		
-		textInput = pair.sourceText
-		textOutput = pair.destText ?? ""
+
+		self.pair = pair
 	}
 
 	@IBAction func scanImageInput() {
@@ -149,43 +150,48 @@ extension TranslateViewController {
 	}
 
 	@IBAction func copyOutput() {
-		guard !textOutput.isEmpty else { return }
+		guard let text = pair.destText, !text.isEmpty else { return }
 		
-		UIPasteboard.general.string = textOutput
-		Root.shared.showBanner(message: "Copy: \(textOutput)")
+		UIPasteboard.general.string = text
+		Root.shared.showBanner(message: "Copy: \(text)")
 	}
 
 	@IBAction func shareOutput() {
-		let shareSheet = UIActivityViewController(activityItems: [textOutput], applicationActivities: nil)
+		guard let text = pair.destText, !text.isEmpty else { return }
+
+		let shareSheet = UIActivityViewController(activityItems: [text], applicationActivities: nil)
 		self.present(shareSheet, animated: true, completion: nil)
 	}
 
 	@IBAction func speakOutput() {
+		guard let text = pair.destText, !text.isEmpty else { return }
+
 		// needs proper mapping
 		// lang lookup broken if clipboarded and destLang != Pref.lang
 		let langMapping = ["EN": "en-US", "DE": "de-DE"]
 		
 		synthesizer.stopSpeaking(at: .immediate)
-		let phrase = AVSpeechUtterance.init(string: textOutput)
+		let phrase = AVSpeechUtterance.init(string: text)
 		if let voice = AVSpeechSynthesisVoice(language: langMapping[PreferencesController.shared.lang]) {
 			phrase.voice = voice
 		}
 		synthesizer.speak(phrase)
-		Root.shared.showBanner(message: "Speak: \(textOutput)")
+		Root.shared.showBanner(message: "Speak: \(text)")
 	}
 
 	@IBAction func translate() {
-		guard !textInput.isEmpty else { return }
+		guard !pair.sourceText.isEmpty else { return }
 		
 		view.endEditing(true)
-		textOutput = ""
+		pair = pair.with(destText: "")
 		Root.shared.isBusy = true
-		engine.translate(text: textInput) { [weak self] result in
+		engine.translate(pair) { [weak self] result in
 			Root.shared.isBusy = false
-			
+			guard let self = self else { return }
+
 			switch result {
-			case .success(let destText):
-				self?.textOutput = destText
+			case .success(let destPair):
+				self.pair = destPair
 			case .failure(let error):
 				switch error {
 				case .empty:
