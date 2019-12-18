@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 
 class TranslateViewController: UIViewController, UITextViewDelegate {
@@ -26,6 +27,12 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 	@IBOutlet weak var speakOutputButton: UIButton!
 	
 	private let engine = Engine()
+	private lazy var synthesizer: AVSpeechSynthesizer = {
+		let synth = AVSpeechSynthesizer()
+//		synth.delegate = self
+		return synth
+	}()
+
 	private lazy var enabledColor = UIView().tintColor
 	private lazy var disabledColor = UIColor.lightGray.withAlphaComponent(0.2)
 
@@ -85,13 +92,6 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 	func textViewDidChange(_ textView: UITextView) {
 		textInput = textView.text
 	}
-
-	@IBAction func copyInput() {
-		guard let pair = PreferencesController.shared.pairCache.first else { return }
-		
-		textInput = pair.sourceText
-		textOutput = pair.destText ?? ""
-	}
 }
 
 extension TranslateViewController: UIContextMenuInteractionDelegate {
@@ -132,17 +132,38 @@ extension TranslateViewController {
 		textOutput = ""
 		textInputView.becomeFirstResponder()
 	}
-	
+
+	@IBAction func copyInput() {
+		guard let pair = PreferencesController.shared.pairCache.first else { return }
+		
+		textInput = pair.sourceText
+		textOutput = pair.destText ?? ""
+	}
+
 	@IBAction func copyOutput() {
 		guard !textOutput.isEmpty else { return }
 		
 		UIPasteboard.general.string = textOutput
-		Root.shared.showBanner(message: "Copied: \(textOutput)")
+		Root.shared.showBanner(message: "Copy: \(textOutput)")
 	}
 
 	@IBAction func shareOutput() {
 		let shareSheet = UIActivityViewController(activityItems: [textOutput], applicationActivities: nil)
 		self.present(shareSheet, animated: true, completion: nil)
+	}
+
+	@IBAction func speakOutput() {
+		// needs proper mapping
+		// lang lookup broken if clipboarded and destLang != Pref.lang
+		let langMapping = ["EN": "en-US", "DE": "de-DE"]
+		
+		synthesizer.stopSpeaking(at: .immediate)
+		let phrase = AVSpeechUtterance.init(string: textOutput)
+		if let voice = AVSpeechSynthesisVoice(language: langMapping[PreferencesController.shared.lang]) {
+			phrase.voice = voice
+		}
+		synthesizer.speak(phrase)
+		Root.shared.showBanner(message: "Speak: \(textOutput)")
 	}
 
 	@IBAction func translate() {

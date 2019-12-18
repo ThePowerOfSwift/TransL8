@@ -290,6 +290,9 @@
                                         <state key="normal" image="speaker.2.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                         </state>
+                                        <connections>
+                                            <action selector="speakOutput" destination="Hlg-VP-pyD" eventType="touchUpInside" id="Vy3-cy-4Vg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
