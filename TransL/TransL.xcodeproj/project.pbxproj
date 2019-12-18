@@ -23,6 +23,7 @@
 		DEB1DFCE23A7866800ED0715 /* DeepL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFCD23A7866800ED0715 /* DeepL.swift */; };
 		DEB1DFD023A787BE00ED0715 /* Data+JSONDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFCF23A787BE00ED0715 /* Data+JSONDecode.swift */; };
 		DEB1DFD223A7909F00ED0715 /* TranslationPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFD123A7909F00ED0715 /* TranslationPair.swift */; };
+		DEE36B7D23AA3E4600785679 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36B7C23AA3E4600785679 /* Engine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DEB1DFCD23A7866800ED0715 /* DeepL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepL.swift; sourceTree = "<group>"; };
 		DEB1DFCF23A787BE00ED0715 /* Data+JSONDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+JSONDecode.swift"; sourceTree = "<group>"; };
 		DEB1DFD123A7909F00ED0715 /* TranslationPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationPair.swift; sourceTree = "<group>"; };
+		DEE36B7C23AA3E4600785679 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		DEB1DFD323A7915900ED0715 /* Translation */ = {
 			isa = PBXGroup;
 			children = (
+				DEE36B7C23AA3E4600785679 /* Engine.swift */,
 				DEB1DFA623A7595B00ED0715 /* TranslateViewController.swift */,
 				DEB1DFD123A7909F00ED0715 /* TranslationPair.swift */,
 			);
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB1DFC723A76E1B00ED0715 /* PreferencesViewController.swift in Sources */,
+				DEE36B7D23AA3E4600785679 /* Engine.swift in Sources */,
 				DEB1DFC323A76C3200ED0715 /* Double+AnimationDefault.swift in Sources */,
 				DEB1DFD223A7909F00ED0715 /* TranslationPair.swift in Sources */,
 				DEB1DFB923A767D600ED0715 /* DeepLService.swift in Sources */,
