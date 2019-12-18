@@ -19,11 +19,11 @@ class Engine {
 	
   private let service = MoyaProvider<DeepLService>() // plugins: [NetworkLoggerPlugin(verbose: true)])
 
-	func translate(text: String, lang: String, completion: @escaping (Result<String, TranslationError>) -> Void) {
+	func translate(text: String, completion: @escaping (Result<String, TranslationError>) -> Void) {
 		
 		let sourcePair = TranslationPair(sourceText: text, sourceLang: nil, destText: nil, destLang: PreferencesController.shared.lang)
 
-		if let cachedPair = PreferencesController.shared.pairs.first(where: { $0 == sourcePair }) {
+		if let cachedPair = PreferencesController.shared.pairCache.first(where: { $0 == sourcePair }) {
 			completion(.success(cachedPair.destText ?? ""))
 		}
 		else {
@@ -35,7 +35,16 @@ class Engine {
 						let destText = resultContainer.translations.compactMap({ $0.text }).joined(separator: "\n")
 						let sourceLang = resultContainer.translations.first!.detectedSourceLanguage
 						let pair = TranslationPair(sourceText: text, sourceLang: sourceLang, destText: destText, destLang: sourcePair.destLang)
-						PreferencesController.shared.pairs.append(pair)
+						
+						// store limited number of pairs into "cache"
+						var list = PreferencesController.shared.pairCache
+						list.insert(pair, at: 0)
+						let over = list.count - 100
+						if over > 0 {
+							_ = list.dropLast(over)
+						}
+						PreferencesController.shared.pairCache = list
+
 						completion(.success(pair.destText ?? ""))
 					}
 					else {

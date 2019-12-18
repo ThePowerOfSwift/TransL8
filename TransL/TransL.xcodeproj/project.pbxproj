@@ -24,6 +24,8 @@
 		DEB1DFD023A787BE00ED0715 /* Data+JSONDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFCF23A787BE00ED0715 /* Data+JSONDecode.swift */; };
 		DEB1DFD223A7909F00ED0715 /* TranslationPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFD123A7909F00ED0715 /* TranslationPair.swift */; };
 		DEE36B7D23AA3E4600785679 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36B7C23AA3E4600785679 /* Engine.swift */; };
+		DEE36B7F23AA46CF00785679 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36B7E23AA46CF00785679 /* Storage.swift */; };
+		DEE36B8123AA476A00785679 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36B8023AA476A00785679 /* SecureStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		DEB1DFCF23A787BE00ED0715 /* Data+JSONDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+JSONDecode.swift"; sourceTree = "<group>"; };
 		DEB1DFD123A7909F00ED0715 /* TranslationPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationPair.swift; sourceTree = "<group>"; };
 		DEE36B7C23AA3E4600785679 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		DEE36B7E23AA46CF00785679 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		DEE36B8023AA476A00785679 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +122,10 @@
 		DEB1DFC823A76EAF00ED0715 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				DEB1DFBA23A767F400ED0715 /* PreferencesController.swift */,
 				DEB1DFC623A76E1B00ED0715 /* PreferencesViewController.swift */,
+				DEB1DFBA23A767F400ED0715 /* PreferencesController.swift */,
+				DEE36B7E23AA46CF00785679 /* Storage.swift */,
+				DEE36B8023AA476A00785679 /* SecureStorage.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -146,8 +152,8 @@
 		DEB1DFD323A7915900ED0715 /* Translation */ = {
 			isa = PBXGroup;
 			children = (
-				DEE36B7C23AA3E4600785679 /* Engine.swift */,
 				DEB1DFA623A7595B00ED0715 /* TranslateViewController.swift */,
+				DEE36B7C23AA3E4600785679 /* Engine.swift */,
 				DEB1DFD123A7909F00ED0715 /* TranslationPair.swift */,
 			);
 			path = Translation;
@@ -269,7 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB1DFC723A76E1B00ED0715 /* PreferencesViewController.swift in Sources */,
+				DEE36B7F23AA46CF00785679 /* Storage.swift in Sources */,
 				DEE36B7D23AA3E4600785679 /* Engine.swift in Sources */,
+				DEE36B8123AA476A00785679 /* SecureStorage.swift in Sources */,
 				DEB1DFC323A76C3200ED0715 /* Double+AnimationDefault.swift in Sources */,
 				DEB1DFD223A7909F00ED0715 /* TranslationPair.swift in Sources */,
 				DEB1DFB923A767D600ED0715 /* DeepLService.swift in Sources */,

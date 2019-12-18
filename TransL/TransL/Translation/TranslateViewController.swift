@@ -31,7 +31,7 @@ class TranslateViewController: UIViewController {
 		view.endEditing(true)
 		textOutputView.text = ""
 		Root.shared.isBusy = true
-		engine.translate(text: text, lang: PreferencesController.shared.lang) { [weak self] result in
+		engine.translate(text: text) { [weak self] result in
 			Root.shared.isBusy = false
 			
 			switch result {
