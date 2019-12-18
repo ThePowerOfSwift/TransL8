@@ -42,6 +42,15 @@ class RootViewController: UIViewController {
 
 	private var autoHideTimer: Timer?
 
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		// hide properly
+		self.bannerTopContraint.constant = -self.bannerView.frame.size.height
+			self.view.layoutIfNeeded()
+		self.bannerView.isHidden = true
+	}
+
   var isBusy = false {
     didSet {
       if isBusy {
