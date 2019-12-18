@@ -196,14 +196,27 @@
                                         <state key="normal" image="tray.full.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                         </state>
+                                        <connections>
+                                            <action selector="copyInput" destination="Hlg-VP-pyD" eventType="touchUpInside" id="T1X-wy-JNO"/>
+                                        </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mtF-HK-T7N">
+                                        <rect key="frame" x="36" y="138" width="10" height="8"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="nr7-SK-SA3"/>
+                                            <constraint firstAttribute="width" constant="10" id="yL6-bt-2lZ"/>
+                                        </constraints>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="8"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="Gky-Tp-dqv" firstAttribute="leading" secondItem="Rcn-la-bUB" secondAttribute="leading" id="4cE-Df-DRa"/>
                                     <constraint firstItem="1tN-dz-M8W" firstAttribute="top" secondItem="Rcn-la-bUB" secondAttribute="top" id="5AR-Sl-Iov"/>
                                     <constraint firstAttribute="trailing" secondItem="Gky-Tp-dqv" secondAttribute="trailing" id="6Ej-Na-Eof"/>
+                                    <constraint firstItem="mtF-HK-T7N" firstAttribute="centerY" secondItem="dR4-y2-sZd" secondAttribute="centerY" id="79m-9x-M8b"/>
                                     <constraint firstAttribute="bottom" secondItem="dR4-y2-sZd" secondAttribute="bottom" id="7Yx-o1-sRz"/>
+                                    <constraint firstItem="mtF-HK-T7N" firstAttribute="leading" secondItem="dR4-y2-sZd" secondAttribute="trailing" constant="-8" id="HRR-im-y7Q"/>
                                     <constraint firstItem="1tN-dz-M8W" firstAttribute="leading" secondItem="Rcn-la-bUB" secondAttribute="leading" id="Jsx-ek-VTh"/>
                                     <constraint firstAttribute="trailing" secondItem="dR4-y2-sZd" secondAttribute="trailing" id="Nyg-KD-xdc"/>
                                     <constraint firstItem="dR4-y2-sZd" firstAttribute="top" secondItem="Gky-Tp-dqv" secondAttribute="bottom" constant="16" id="TgI-OU-C61"/>
@@ -327,6 +340,7 @@
                         <outlet property="clearInputButton" destination="0T0-kf-uHD" id="MKU-pp-LZP"/>
                         <outlet property="clipboardInputButton" destination="dR4-y2-sZd" id="B8B-AP-Brs"/>
                         <outlet property="clipboardOutputButton" destination="PnA-sb-aZd" id="Sxo-NT-C8p"/>
+                        <outlet property="clipboardTriangleView" destination="mtF-HK-T7N" id="GXf-HF-CbN"/>
                         <outlet property="micInputButton" destination="Gky-Tp-dqv" id="d7M-76-XOW"/>
                         <outlet property="shareOutputButton" destination="LcO-Og-1fm" id="hlE-tA-UFg"/>
                         <outlet property="speakOutputButton" destination="1vl-4T-Sfe" id="gAA-0G-ilV"/>
@@ -440,6 +454,7 @@
     </scenes>
     <resources>
         <image name="arrow.2.circlepath" catalog="system" width="64" height="50"/>
+        <image name="arrowtriangle.down.fill" catalog="system" width="64" height="62"/>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
         <image name="clear" catalog="system" width="64" height="56"/>
         <image name="doc.on.clipboard.fill" catalog="system" width="58" height="64"/>

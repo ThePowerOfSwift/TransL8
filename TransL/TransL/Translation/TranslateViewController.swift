@@ -13,6 +13,7 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 	
 	@IBOutlet weak var textInputView: UITextView!
 	@IBOutlet weak var clipboardInputButton: UIButton!
+	@IBOutlet weak var clipboardTriangleView: UIImageView!
 	@IBOutlet weak var cameraInputButton: UIButton!
 	@IBOutlet weak var micInputButton: UIButton!
 	@IBOutlet weak var clearInputButton: UIButton!
@@ -52,6 +53,11 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 			clipboardOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
 			shareOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
 			speakOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
+			
+			let hasClips = !PreferencesController.shared.pairCache.isEmpty
+			clipboardInputButton.isEnabled = hasClips
+			clipboardInputButton.tintColor = hasClips ? enabledColor : disabledColor
+			clipboardTriangleView.isHidden = !hasClips
 		}
 	}
 	
@@ -79,6 +85,13 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 	func textViewDidChange(_ textView: UITextView) {
 		textInput = textView.text
 	}
+
+	@IBAction func copyInput() {
+		guard let pair = PreferencesController.shared.pairCache.first else { return }
+		
+		textInput = pair.sourceText
+		textOutput = pair.destText ?? ""
+	}
 }
 
 extension TranslateViewController: UIContextMenuInteractionDelegate {
@@ -91,7 +104,7 @@ extension TranslateViewController: UIContextMenuInteractionDelegate {
 		}
 		
 		let configuration = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { actions -> UIMenu? in
-			var actions = [UIAction]()
+			var actions = [UIMenuElement]()
 			for idx in 0..<min(10, list.count) {
 				let pair = list[idx]
 				let action = UIAction(title: pair.sourceText) { [weak self] action in
@@ -100,7 +113,13 @@ extension TranslateViewController: UIContextMenuInteractionDelegate {
 				}
 				actions.append(action)
 			}
-			return UIMenu(title: "Recent translations", children: actions)
+			let action = UIAction(title: "Clear", image: UIImage(systemName: "trash"), attributes: .destructive) { [weak self] action in
+				PreferencesController.shared.pairCache = []
+				self?.textInput = ""
+				self?.textOutput = ""
+			}
+			actions.append(action)
+			return UIMenu(title: "", children: actions)
 		}
 		return configuration
 	}
@@ -110,6 +129,7 @@ extension TranslateViewController {
 	
 	@IBAction func clearInput() {
 		textInput = ""
+		textOutput = ""
 		textInputView.becomeFirstResponder()
 	}
 	
