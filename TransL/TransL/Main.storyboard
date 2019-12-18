@@ -174,6 +174,9 @@
                                         <state key="normal" image="camera.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                         </state>
+                                        <connections>
+                                            <action selector="scanImageInput" destination="Hlg-VP-pyD" eventType="touchUpInside" id="x6L-uo-8CQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gky-Tp-dqv">
                                         <rect key="frame" x="0.0" y="60" width="44" height="44"/>
@@ -185,6 +188,9 @@
                                         <state key="normal" image="mic.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                         </state>
+                                        <connections>
+                                            <action selector="recordMicInput" destination="Hlg-VP-pyD" eventType="touchUpInside" id="td8-CK-gv1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dR4-y2-sZd">
                                         <rect key="frame" x="0.0" y="120" width="44" height="44"/>
