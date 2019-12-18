@@ -276,6 +276,9 @@
                                         <state key="normal" image="square.and.arrow.up.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                         </state>
+                                        <connections>
+                                            <action selector="shareOutput" destination="Hlg-VP-pyD" eventType="touchUpInside" id="Of5-rb-AMF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vl-4T-Sfe">
                                         <rect key="frame" x="0.0" y="120" width="44" height="44"/>

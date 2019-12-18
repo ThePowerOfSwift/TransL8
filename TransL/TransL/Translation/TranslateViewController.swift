@@ -139,7 +139,12 @@ extension TranslateViewController {
 		UIPasteboard.general.string = textOutput
 		Root.shared.showBanner(message: "Copied: \(textOutput)")
 	}
-	
+
+	@IBAction func shareOutput() {
+		let shareSheet = UIActivityViewController(activityItems: [textOutput], applicationActivities: nil)
+		self.present(shareSheet, animated: true, completion: nil)
+	}
+
 	@IBAction func translate() {
 		guard !textInput.isEmpty else { return }
 		
