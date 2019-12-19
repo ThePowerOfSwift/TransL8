@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 
 extension TranslateViewController {
@@ -24,7 +23,7 @@ extension TranslateViewController {
 	}
 
 	@IBAction func recordMicInput() {
-		Root.shared.showBanner(message: "(not implemented))")
+		Root.shared.showBanner(message: "(not implemented)")
 	}
 
 	@IBAction func copyOutput() {
@@ -39,22 +38,6 @@ extension TranslateViewController {
 
 		let shareSheet = UIActivityViewController(activityItems: [text], applicationActivities: nil)
 		self.present(shareSheet, animated: true, completion: nil)
-	}
-
-	@IBAction func speakOutput() {
-		guard let text = pair.destText, !text.isEmpty else { return }
-
-		// needs proper mapping
-		// lang lookup broken if clipboarded and destLang != Pref.lang
-		let langMapping = ["EN": "en-US", "DE": "de-DE"]
-		
-		synthesizer.stopSpeaking(at: .immediate)
-		let phrase = AVSpeechUtterance.init(string: text)
-		if let voice = AVSpeechSynthesisVoice(language: langMapping[PreferencesController.shared.lang]) {
-			phrase.voice = voice
-		}
-		synthesizer.speak(phrase)
-		Root.shared.showBanner(message: "Speak: \(text)")
 	}
 
 	@IBAction func translate() {

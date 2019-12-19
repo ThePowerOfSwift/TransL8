@@ -11,6 +11,7 @@
 		DE1CD19E23AAEEC60028EEAF /* TranslationViewController+Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CD19D23AAEEC60028EEAF /* TranslationViewController+Clipboard.swift */; };
 		DE1CD1A023AAEF1D0028EEAF /* TranslationViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CD19F23AAEF1D0028EEAF /* TranslationViewController+Action.swift */; };
 		DE1CD1A223AAF03A0028EEAF /* TranslationViewController+Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CD1A123AAF03A0028EEAF /* TranslationViewController+Scan.swift */; };
+		DE1CD1A423AAF6520028EEAF /* TranslationViewController+Speak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CD1A323AAF6520028EEAF /* TranslationViewController+Speak.swift */; };
 		DEB1DFA323A7595B00ED0715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFA223A7595B00ED0715 /* AppDelegate.swift */; };
 		DEB1DFA523A7595B00ED0715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFA423A7595B00ED0715 /* SceneDelegate.swift */; };
 		DEB1DFA723A7595B00ED0715 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFA623A7595B00ED0715 /* TranslateViewController.swift */; };
@@ -26,7 +27,7 @@
 		DEB1DFCE23A7866800ED0715 /* DeepL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFCD23A7866800ED0715 /* DeepL.swift */; };
 		DEB1DFD023A787BE00ED0715 /* Data+JSONDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFCF23A787BE00ED0715 /* Data+JSONDecode.swift */; };
 		DEB1DFD223A7909F00ED0715 /* TextPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFD123A7909F00ED0715 /* TextPair.swift */; };
-		DEE36B7D23AA3E4600785679 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36B7C23AA3E4600785679 /* Engine.swift */; };
+		DEE36B7D23AA3E4600785679 /* TranslationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36B7C23AA3E4600785679 /* TranslationEngine.swift */; };
 		DEE36B7F23AA46CF00785679 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36B7E23AA46CF00785679 /* Storage.swift */; };
 		DEE36B8123AA476A00785679 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36B8023AA476A00785679 /* SecureStorage.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		DE1CD19D23AAEEC60028EEAF /* TranslationViewController+Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationViewController+Clipboard.swift"; sourceTree = "<group>"; };
 		DE1CD19F23AAEF1D0028EEAF /* TranslationViewController+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationViewController+Action.swift"; sourceTree = "<group>"; };
 		DE1CD1A123AAF03A0028EEAF /* TranslationViewController+Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationViewController+Scan.swift"; sourceTree = "<group>"; };
+		DE1CD1A323AAF6520028EEAF /* TranslationViewController+Speak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationViewController+Speak.swift"; sourceTree = "<group>"; };
 		DEB1DF9F23A7595B00ED0715 /* TransL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB1DFA223A7595B00ED0715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEB1DFA423A7595B00ED0715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 		DEB1DFCD23A7866800ED0715 /* DeepL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepL.swift; sourceTree = "<group>"; };
 		DEB1DFCF23A787BE00ED0715 /* Data+JSONDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+JSONDecode.swift"; sourceTree = "<group>"; };
 		DEB1DFD123A7909F00ED0715 /* TextPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPair.swift; sourceTree = "<group>"; };
-		DEE36B7C23AA3E4600785679 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		DEE36B7C23AA3E4600785679 /* TranslationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEngine.swift; sourceTree = "<group>"; };
 		DEE36B7E23AA46CF00785679 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DEE36B8023AA476A00785679 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,8 +163,9 @@
 				DEB1DFA623A7595B00ED0715 /* TranslateViewController.swift */,
 				DE1CD19F23AAEF1D0028EEAF /* TranslationViewController+Action.swift */,
 				DE1CD1A123AAF03A0028EEAF /* TranslationViewController+Scan.swift */,
+				DE1CD1A323AAF6520028EEAF /* TranslationViewController+Speak.swift */,
 				DE1CD19D23AAEEC60028EEAF /* TranslationViewController+Clipboard.swift */,
-				DEE36B7C23AA3E4600785679 /* Engine.swift */,
+				DEE36B7C23AA3E4600785679 /* TranslationEngine.swift */,
 				DEB1DFD123A7909F00ED0715 /* TextPair.swift */,
 			);
 			path = Translation;
@@ -285,7 +288,7 @@
 			files = (
 				DEB1DFC723A76E1B00ED0715 /* PreferencesViewController.swift in Sources */,
 				DEE36B7F23AA46CF00785679 /* Storage.swift in Sources */,
-				DEE36B7D23AA3E4600785679 /* Engine.swift in Sources */,
+				DEE36B7D23AA3E4600785679 /* TranslationEngine.swift in Sources */,
 				DEE36B8123AA476A00785679 /* SecureStorage.swift in Sources */,
 				DEB1DFC323A76C3200ED0715 /* Double+AnimationDefault.swift in Sources */,
 				DE1CD1A223AAF03A0028EEAF /* TranslationViewController+Scan.swift in Sources */,
@@ -297,6 +300,7 @@
 				DEB1DFD023A787BE00ED0715 /* Data+JSONDecode.swift in Sources */,
 				DEB1DFA723A7595B00ED0715 /* TranslateViewController.swift in Sources */,
 				DEB1DFA323A7595B00ED0715 /* AppDelegate.swift in Sources */,
+				DE1CD1A423AAF6520028EEAF /* TranslationViewController+Speak.swift in Sources */,
 				DE1CD1A023AAEF1D0028EEAF /* TranslationViewController+Action.swift in Sources */,
 				DE1CD19E23AAEEC60028EEAF /* TranslationViewController+Clipboard.swift in Sources */,
 				DEB1DFCB23A7729800ED0715 /* UIView+Border.swift in Sources */,

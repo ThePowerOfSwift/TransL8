@@ -10,14 +10,14 @@ import Foundation
 import Moya
 
 
-class Engine {
+class TranslationEngine {
 	
 	enum TranslationError: Error {
 		case empty
 		case network(String)
 	}
 	
-  private let service = MoyaProvider<DeepLService>() // plugins: [NetworkLoggerPlugin(verbose: true)])
+  private let service = MoyaProvider<DeepLService>()
 
 	func translate(_ sourcePair: TextPair, completion: @escaping (Result<TextPair, TranslationError>) -> Void) {
 		

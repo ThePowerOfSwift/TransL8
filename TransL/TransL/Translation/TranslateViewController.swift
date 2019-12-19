@@ -11,7 +11,7 @@ import AVFoundation
 import Vision
 
 
-class TranslateViewController: UIViewController, UITextViewDelegate {
+class TranslateViewController: UIViewController {
 	
 	@IBOutlet weak var textInputView: UITextView!
 	@IBOutlet weak var clipboardInputButton: UIButton!
@@ -27,17 +27,11 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 	@IBOutlet weak var shareOutputButton: UIButton!
 	@IBOutlet weak var speakOutputButton: UIButton!
 	
-	let engine = Engine()
-	
+	let engine = TranslationEngine()
+	let synthesizer = AVSpeechSynthesizer()
 	var scanRequests = [VNRequest]()
 	let scanQueue = DispatchQueue(label: "ScanQueue", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
 	var scannedText = ""
-
-	lazy var synthesizer: AVSpeechSynthesizer = {
-		let synth = AVSpeechSynthesizer()
-//		synth.delegate = self
-		return synth
-	}()
 
 	private lazy var enabledColor = UIView().tintColor
 	private lazy var disabledColor = UIColor.lightGray.withAlphaComponent(0.2)
@@ -76,8 +70,8 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		setupClipboard()
 		setupScan()
+		setupClipboard()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -95,7 +89,11 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 			}
 		}
 	}
-	
+}
+
+
+extension TranslateViewController: UITextViewDelegate {
+
 	func textViewDidChange(_ textView: UITextView) {
 		pair = pair.with(sourceText: textView.text)
 	}
