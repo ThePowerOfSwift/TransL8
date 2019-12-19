@@ -20,10 +20,7 @@ extension TranslateViewController {
 		guard let pair = PreferencesController.shared.pairCache.first else { return }
 
 		self.pair = pair
-	}
-
-	@IBAction func recordMicInput() {
-		Root.shared.showBanner(message: "(not implemented)")
+		self.textInputView.becomeFirstResponder()
 	}
 
 	@IBAction func copyOutput() {

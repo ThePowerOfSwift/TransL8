@@ -31,6 +31,7 @@ extension TranslateViewController: VNDocumentCameraViewControllerDelegate {
 	}
 	
 	@IBAction func scanImageInput() {
+		view.endEditing(true)
 		let documentCameraViewController = VNDocumentCameraViewController()
 		documentCameraViewController.delegate = self
 		present(documentCameraViewController, animated: true)
@@ -59,6 +60,7 @@ extension TranslateViewController: VNDocumentCameraViewControllerDelegate {
 			DispatchQueue.main.async(execute: {
 				Root.shared.isBusy = false
 				self.pair = self.pair.with(sourceText: self.scannedText)
+				self.textInputView.becomeFirstResponder()
 			})
 		}
 	}

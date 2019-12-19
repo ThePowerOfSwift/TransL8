@@ -31,6 +31,7 @@ extension TranslateViewController: UIContextMenuInteractionDelegate {
 					guard let self = self else { return }
 
 					self.pair = pair
+					self.textInputView.becomeFirstResponder()
 				}
 				actions.append(action)
 			}
@@ -39,6 +40,7 @@ extension TranslateViewController: UIContextMenuInteractionDelegate {
 
 				PreferencesController.shared.pairCache = []
 				self.pair = self.pair.with(sourceText: "", destText: "")
+				self.textInputView.becomeFirstResponder()
 			}
 			actions.append(action)
 			return UIMenu(title: "", children: actions)

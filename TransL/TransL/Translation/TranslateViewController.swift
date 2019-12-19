@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Vision
+import Speech
 
 
 class TranslateViewController: UIViewController {
@@ -18,6 +19,9 @@ class TranslateViewController: UIViewController {
 	@IBOutlet weak var clipboardTriangleView: UIImageView!
 	@IBOutlet weak var cameraInputButton: UIButton!
 	@IBOutlet weak var micInputButton: UIButton!
+	@IBOutlet weak var micOverlay: UIVisualEffectView!
+	@IBOutlet weak var micPreviewLabel: UILabel!
+	@IBOutlet weak var micStopButton: UIButton!
 	@IBOutlet weak var clearInputButton: UIButton!
 	
 	@IBOutlet weak var translateButton: UIButton!
@@ -29,12 +33,18 @@ class TranslateViewController: UIViewController {
 	
 	let engine = TranslationEngine()
 	let synthesizer = AVSpeechSynthesizer()
+
+	let record = SFSpeechRecognizer()
+	let recordEngine = AVAudioEngine()
+	var recordRequest = SFSpeechAudioBufferRecognitionRequest()
+	var recordTask: SFSpeechRecognitionTask?
+
 	var scanRequests = [VNRequest]()
 	let scanQueue = DispatchQueue(label: "ScanQueue", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
 	var scannedText = ""
 
-	private lazy var enabledColor = UIView().tintColor
-	private lazy var disabledColor = UIColor.lightGray.withAlphaComponent(0.2)
+	lazy var enabledColor = UIView().tintColor
+	lazy var disabledColor = UIColor.lightGray.withAlphaComponent(0.2)
 
 	var pair: TextPair = TextPair(sourceText: "", sourceLang: nil, destText: "", destLang: PreferencesController.shared.lang) {
 		didSet {
@@ -70,6 +80,7 @@ class TranslateViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		setupRecord()
 		setupScan()
 		setupClipboard()
 	}

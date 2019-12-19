@@ -12,6 +12,7 @@
 		DE1CD1A023AAEF1D0028EEAF /* TranslationViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CD19F23AAEF1D0028EEAF /* TranslationViewController+Action.swift */; };
 		DE1CD1A223AAF03A0028EEAF /* TranslationViewController+Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CD1A123AAF03A0028EEAF /* TranslationViewController+Scan.swift */; };
 		DE1CD1A423AAF6520028EEAF /* TranslationViewController+Speak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CD1A323AAF6520028EEAF /* TranslationViewController+Speak.swift */; };
+		DE5B184623AB9135009D3E8C /* TranslationViewController+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B184523AB9135009D3E8C /* TranslationViewController+Record.swift */; };
 		DEB1DFA323A7595B00ED0715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFA223A7595B00ED0715 /* AppDelegate.swift */; };
 		DEB1DFA523A7595B00ED0715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFA423A7595B00ED0715 /* SceneDelegate.swift */; };
 		DEB1DFA723A7595B00ED0715 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DFA623A7595B00ED0715 /* TranslateViewController.swift */; };
@@ -40,6 +41,7 @@
 		DE1CD19F23AAEF1D0028EEAF /* TranslationViewController+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationViewController+Action.swift"; sourceTree = "<group>"; };
 		DE1CD1A123AAF03A0028EEAF /* TranslationViewController+Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationViewController+Scan.swift"; sourceTree = "<group>"; };
 		DE1CD1A323AAF6520028EEAF /* TranslationViewController+Speak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationViewController+Speak.swift"; sourceTree = "<group>"; };
+		DE5B184523AB9135009D3E8C /* TranslationViewController+Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslationViewController+Record.swift"; sourceTree = "<group>"; };
 		DEB1DF9F23A7595B00ED0715 /* TransL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB1DFA223A7595B00ED0715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEB1DFA423A7595B00ED0715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				DEB1DFA623A7595B00ED0715 /* TranslateViewController.swift */,
 				DE1CD19F23AAEF1D0028EEAF /* TranslationViewController+Action.swift */,
 				DE1CD1A123AAF03A0028EEAF /* TranslationViewController+Scan.swift */,
+				DE5B184523AB9135009D3E8C /* TranslationViewController+Record.swift */,
 				DE1CD1A323AAF6520028EEAF /* TranslationViewController+Speak.swift */,
 				DE1CD19D23AAEEC60028EEAF /* TranslationViewController+Clipboard.swift */,
 				DEE36B7C23AA3E4600785679 /* TranslationEngine.swift */,
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB1DFC723A76E1B00ED0715 /* PreferencesViewController.swift in Sources */,
+				DE5B184623AB9135009D3E8C /* TranslationViewController+Record.swift in Sources */,
 				DEE36B7F23AA46CF00785679 /* Storage.swift in Sources */,
 				DEE36B7D23AA3E4600785679 /* TranslationEngine.swift in Sources */,
 				DEE36B8123AA476A00785679 /* SecureStorage.swift in Sources */,
@@ -442,7 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = TransL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -463,7 +467,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = TransL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
