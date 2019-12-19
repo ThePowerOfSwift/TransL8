@@ -23,10 +23,6 @@ extension TranslateViewController {
 		self.pair = pair
 	}
 
-	@IBAction func scanImageInput() {
-		Root.shared.showBanner(message: "(not implemented))")
-	}
-
 	@IBAction func recordMicInput() {
 		Root.shared.showBanner(message: "(not implemented))")
 	}

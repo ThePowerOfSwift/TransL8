@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Vision
 
 
 class TranslateViewController: UIViewController, UITextViewDelegate {
@@ -27,6 +28,11 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 	@IBOutlet weak var speakOutputButton: UIButton!
 	
 	let engine = Engine()
+	
+	var scanRequests = [VNRequest]()
+	let scanQueue = DispatchQueue(label: "ScanQueue", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
+	var scannedText = ""
+
 	lazy var synthesizer: AVSpeechSynthesizer = {
 		let synth = AVSpeechSynthesizer()
 //		synth.delegate = self
@@ -71,6 +77,7 @@ class TranslateViewController: UIViewController, UITextViewDelegate {
 		super.viewDidLoad()
 		
 		setupClipboard()
+		setupScan()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
