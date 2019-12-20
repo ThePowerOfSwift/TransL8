@@ -1,9 +1,0 @@
-
-target 'TransL' do
-	platform :ios, '13.2'
-  use_frameworks!
-
-	pod 'Moya'
-	pod 'KeychainSwift'
-
-end
