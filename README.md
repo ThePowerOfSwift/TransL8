@@ -12,7 +12,7 @@ I've enjoyed and used the great translation service from [DeepL](https://www.dee
 
 ## Installation
 
-You need Xcode 11 and iOS 13 to build and run this app. Furthermore a [DeepL Pro Account with API access](https://www.deepl.com/pro-account.html) is needed for the translation - it's worth it but I earn no money out of that promotion!
+You need Xcode 11 and iOS 13 to build and run this app. Furthermore a paid [DeepL Pro Account with API access](https://www.deepl.com/pro-account.html) is needed for the translation - it's worth it but I earn no money out of that promotion!
 
 ## Future
 
@@ -26,3 +26,5 @@ Feel free to fork and extend it's core features. In the future, more feature are
 - Siri intents
 - serve clipboard history as a Document provider extension
 - x-url-mechanics
+- drag&drop support on iPads
+- Catalyst support
