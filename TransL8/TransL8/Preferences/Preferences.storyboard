@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IXq-8I-Y3d">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Preferences-->
+        <scene sceneID="Xc5-FX-0o6">
+            <objects>
+                <viewController storyboardIdentifier="PreferencesMiteAccessViewController" title="Preferences" id="IXq-8I-Y3d" customClass="PreferencesViewController" customModule="TransL8" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pvm-gJ-NVd"/>
+                        <viewControllerLayoutGuide type="bottom" id="wBC-BF-2Ad"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ouf-pb-ZgZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlK-px-jhI">
+                                <rect key="frame" x="16" y="96" width="382" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Td3-3R-wSH">
+                                <rect key="frame" x="16" y="122" width="382" height="32"/>
+                                <segments>
+                                    <segment title="EN"/>
+                                    <segment title="DE"/>
+                                    <segment title="FR"/>
+                                    <segment title="ES"/>
+                                    <segment title="PT"/>
+                                    <segment title="IT"/>
+                                    <segment title="NL"/>
+                                    <segment title="PL"/>
+                                    <segment title="RU"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeLang" destination="IXq-8I-Y3d" eventType="valueChanged" id="cdQ-Aw-wND"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="API key" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ced-AG-04Z">
+                                <rect key="frame" x="16" y="185" width="382" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <action selector="changeText:" destination="IXq-8I-Y3d" eventType="editingChanged" id="5XG-EU-qgL"/>
+                                    <outlet property="delegate" destination="IXq-8I-Y3d" id="a9B-VR-fL8"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 / 1000000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8M6-Zu-dSn">
+                                <rect key="frame" x="16" y="263" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59n-QQ-KZO">
+                                <rect key="frame" x="185" y="219" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="39Z-hI-HHa"/>
+                                    <constraint firstAttribute="width" constant="44" id="wqD-fS-7lC"/>
+                                </constraints>
+                                <state key="normal" image="arrow.2.circlepath" catalog="system"/>
+                                <connections>
+                                    <action selector="update" destination="IXq-8I-Y3d" eventType="touchUpInside" id="cWP-14-lbB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="59n-QQ-KZO" firstAttribute="top" secondItem="ced-AG-04Z" secondAttribute="bottom" id="2Kw-Yk-95A"/>
+                            <constraint firstItem="Td3-3R-wSH" firstAttribute="trailing" secondItem="jlK-px-jhI" secondAttribute="trailing" id="47Q-2Y-iM7"/>
+                            <constraint firstItem="8M6-Zu-dSn" firstAttribute="top" secondItem="59n-QQ-KZO" secondAttribute="bottom" id="D2n-Zz-7J9"/>
+                            <constraint firstItem="Td3-3R-wSH" firstAttribute="leading" secondItem="jlK-px-jhI" secondAttribute="leading" id="H0x-DD-d6w"/>
+                            <constraint firstAttribute="trailing" secondItem="jlK-px-jhI" secondAttribute="trailing" constant="16" id="OmL-Kn-JZ1"/>
+                            <constraint firstItem="jlK-px-jhI" firstAttribute="top" secondItem="pvm-gJ-NVd" secondAttribute="bottom" constant="8" id="PPJ-Rq-wLQ"/>
+                            <constraint firstItem="8M6-Zu-dSn" firstAttribute="leading" secondItem="vg6-nd-SxD" secondAttribute="leading" constant="16" id="Pph-Mh-Yy2"/>
+                            <constraint firstItem="59n-QQ-KZO" firstAttribute="centerX" secondItem="ced-AG-04Z" secondAttribute="centerX" id="QuX-08-A8C"/>
+                            <constraint firstItem="jlK-px-jhI" firstAttribute="leading" secondItem="Ouf-pb-ZgZ" secondAttribute="leading" constant="16" id="W0c-A5-UAr"/>
+                            <constraint firstItem="Td3-3R-wSH" firstAttribute="top" secondItem="jlK-px-jhI" secondAttribute="bottom" constant="8" id="cdI-e8-H7W"/>
+                            <constraint firstItem="vg6-nd-SxD" firstAttribute="trailing" secondItem="8M6-Zu-dSn" secondAttribute="trailing" constant="16" id="cvL-RO-IRc"/>
+                            <constraint firstItem="ced-AG-04Z" firstAttribute="top" secondItem="Td3-3R-wSH" secondAttribute="bottom" constant="32" id="ncu-Ly-Eyl"/>
+                            <constraint firstItem="vg6-nd-SxD" firstAttribute="trailing" secondItem="ced-AG-04Z" secondAttribute="trailing" constant="16" id="pIr-mI-7No"/>
+                            <constraint firstItem="ced-AG-04Z" firstAttribute="leading" secondItem="Ouf-pb-ZgZ" secondAttribute="leading" constant="16" id="zZu-6s-nWT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vg6-nd-SxD"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="BRC-HJ-uYE"/>
+                    <navigationItem key="navigationItem" title="Preferences" id="CJ8-Z9-nSU">
+                        <barButtonItem key="rightBarButtonItem" title="OK" id="FEu-Tq-Eax">
+                            <connections>
+                                <action selector="save:" destination="IXq-8I-Y3d" id="Rxw-qy-71f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTtitleKey" value="preference_mite_title"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="apiKeyView" destination="ced-AG-04Z" id="i76-gE-Ntz"/>
+                        <outlet property="languageSwitch" destination="Td3-3R-wSH" id="zju-Rv-4tV"/>
+                        <outlet property="statusLabel" destination="8M6-Zu-dSn" id="PEe-Z4-tKR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZn-cv-XOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1556" y="623.83808095952031"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.2.circlepath" catalog="system" width="64" height="50"/>
+    </resources>
+</document>

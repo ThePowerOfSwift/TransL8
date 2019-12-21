@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7PY-Ek-FWc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding Navigation Controller-->
+        <scene sceneID="pG4-yW-GkZ">
+            <objects>
+                <navigationController id="7PY-Ek-FWc" customClass="OnboardingNavigationController" customModule="TransL8" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="050-EE-fjb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8uG-L2-0pb" kind="relationship" relationship="rootViewController" id="fsr-kS-Rjc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nF0-Vd-ahA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-442" y="133"/>
+        </scene>
+        <!--Onboarding Intro View Controller-->
+        <scene sceneID="3C6-B1-NoV">
+            <objects>
+                <viewController id="8uG-L2-0pb" customClass="OnboardingIntroViewController" customModule="TransL8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="esl-27-vu5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mue-fe-epV">
+                                <rect key="frame" x="24" y="112" width="366" height="108.5"/>
+                                <string key="text">TransL8 is translating text between different languages by means of the DeepL web service.
+
+You need a (paid) DeepL Pro-Account with a so-called API access.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="msl-YN-GXK">
+                                <rect key="frame" x="24" y="268.5" width="366" height="55"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal">
+                                    <string key="title">If you do not have a DeepL account yet, you can test it 30 days for free on
+https://www.deepl.com/pro-account.html</string>
+                                    <color key="titleColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openMiteLink" destination="8uG-L2-0pb" eventType="touchUpInside" id="TPW-3f-OVJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3m9-h1-b5C" firstAttribute="trailing" secondItem="Mue-fe-epV" secondAttribute="trailing" constant="24" id="8OR-6b-xJv"/>
+                            <constraint firstItem="msl-YN-GXK" firstAttribute="top" secondItem="Mue-fe-epV" secondAttribute="bottom" constant="48" id="Onp-Ow-hzA"/>
+                            <constraint firstItem="msl-YN-GXK" firstAttribute="leading" secondItem="Mue-fe-epV" secondAttribute="leading" id="RxA-8l-ciS"/>
+                            <constraint firstItem="Mue-fe-epV" firstAttribute="leading" secondItem="3m9-h1-b5C" secondAttribute="leading" constant="24" id="da6-YQ-qx0"/>
+                            <constraint firstItem="msl-YN-GXK" firstAttribute="trailing" secondItem="Mue-fe-epV" secondAttribute="trailing" id="fWT-Uj-94O"/>
+                            <constraint firstItem="Mue-fe-epV" firstAttribute="top" secondItem="3m9-h1-b5C" secondAttribute="top" constant="24" id="tNR-yo-7xF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3m9-h1-b5C"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rdn-ia-RiI">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="RTh-ra-nYU">
+                            <rect key="frame" x="107" y="4" width="200" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to TransL8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONU-Bl-14t">
+                                    <rect key="frame" x="-5" y="0.0" width="211" height="27"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="PRz-23-UBX">
+                                    <rect key="frame" x="0.0" y="32" width="200" height="2"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                </progressView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" title="OK" id="KVU-Sm-8UX">
+                            <connections>
+                                <segue destination="Bd0-b2-gNS" kind="show" identifier="showAccess" id="fr0-uL-6RI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bn-6g-0SU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444.92753623188412" y="132.58928571428572"/>
+        </scene>
+        <!--Onboarding Api Key View Controller-->
+        <scene sceneID="xoo-DH-KLF">
+            <objects>
+                <viewController id="k7F-f9-DBS" customClass="OnboardingApiKeyViewController" customModule="TransL8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="euA-g0-IRu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your API key and save it to proceed:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcz-4j-P16">
+                                <rect key="frame" x="24" y="112" width="366" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="API Key" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VCL-oA-LXf">
+                                <rect key="frame" x="24" y="156.5" width="366" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <action selector="changeText:" destination="k7F-f9-DBS" eventType="editingChanged" id="dgZ-yz-Fc0"/>
+                                    <outlet property="delegate" destination="k7F-f9-DBS" id="OVn-qJ-TKe"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Lwi-v7-eAe" firstAttribute="trailing" secondItem="Pcz-4j-P16" secondAttribute="trailing" constant="24" id="5Pd-e6-mpc"/>
+                            <constraint firstItem="Pcz-4j-P16" firstAttribute="leading" secondItem="Lwi-v7-eAe" secondAttribute="leading" constant="24" id="InF-bf-6Gq"/>
+                            <constraint firstItem="VCL-oA-LXf" firstAttribute="top" secondItem="Pcz-4j-P16" secondAttribute="bottom" constant="24" id="RUA-Zn-6x0"/>
+                            <constraint firstItem="VCL-oA-LXf" firstAttribute="leading" secondItem="Pcz-4j-P16" secondAttribute="leading" id="bcL-9T-rMl"/>
+                            <constraint firstItem="Pcz-4j-P16" firstAttribute="top" secondItem="Lwi-v7-eAe" secondAttribute="top" constant="24" id="gL9-Qm-8c1"/>
+                            <constraint firstItem="Pcz-4j-P16" firstAttribute="trailing" secondItem="VCL-oA-LXf" secondAttribute="trailing" id="l5o-g7-8qK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lwi-v7-eAe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5OI-6n-AGE">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="BII-SJ-ZjR">
+                            <rect key="frame" x="107" y="4" width="200" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="API Key" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEl-lz-wmf">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="27"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="BVN-V0-VuK">
+                                    <rect key="frame" x="0.0" y="32" width="200" height="2"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                </progressView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Pku-kV-mjR">
+                            <connections>
+                                <action selector="saveAccess:" destination="k7F-f9-DBS" id="zec-jn-C1H"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="apiKeyView" destination="VCL-oA-LXf" id="Gat-af-LzF"/>
+                        <outlet property="okButton" destination="Pku-kV-mjR" id="5F9-3r-OtE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Php-oo-AlR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2282" y="132"/>
+        </scene>
+        <!--Onboarding Access View Controller-->
+        <scene sceneID="VRy-wf-PLq">
+            <objects>
+                <viewController id="Bd0-b2-gNS" customClass="OnboardingAccessViewController" customModule="TransL8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0X8-hI-xVW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hx8-4T-qZw">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzY-OF-zPW">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="662.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V90-oC-3YK">
+                                                <rect key="frame" x="24" y="24" width="366" height="130.5"/>
+                                                <string key="text">To securely use DeepL, TransL8 needs your personal "API Key" from the web service:
+
+After login switch to your account summary (1), then activate API access (2) and copy the API key (3).</string>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q59-YB-gBs">
+                                                <rect key="frame" x="24" y="162.5" width="366" height="484"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Q59-YB-gBs" secondAttribute="height" multiplier="1125:1488" id="Gu4-3n-pcQ"/>
+                                                </constraints>
+                                                <state key="normal" image="Onboarding"/>
+                                                <connections>
+                                                    <action selector="login:" destination="Bd0-b2-gNS" eventType="touchUpInside" id="F2e-e1-owc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="V90-oC-3YK" firstAttribute="leading" secondItem="TzY-OF-zPW" secondAttribute="leading" constant="24" id="BRd-dC-CV0"/>
+                                            <constraint firstItem="Q59-YB-gBs" firstAttribute="top" secondItem="V90-oC-3YK" secondAttribute="bottom" constant="8" id="FCE-rK-czt"/>
+                                            <constraint firstAttribute="trailing" secondItem="V90-oC-3YK" secondAttribute="trailing" constant="24" id="FfL-gi-ceH"/>
+                                            <constraint firstItem="Q59-YB-gBs" firstAttribute="trailing" secondItem="V90-oC-3YK" secondAttribute="trailing" id="bAM-lG-Unm"/>
+                                            <constraint firstAttribute="bottom" secondItem="Q59-YB-gBs" secondAttribute="bottom" constant="16" id="dFo-uG-i3S"/>
+                                            <constraint firstItem="Q59-YB-gBs" firstAttribute="leading" secondItem="V90-oC-3YK" secondAttribute="leading" id="edJ-qV-1Tz"/>
+                                            <constraint firstItem="V90-oC-3YK" firstAttribute="top" secondItem="TzY-OF-zPW" secondAttribute="top" constant="24" id="xfc-SP-287"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="TzY-OF-zPW" firstAttribute="leading" secondItem="Hx8-4T-qZw" secondAttribute="leading" id="PJy-xu-D97"/>
+                                    <constraint firstAttribute="bottom" secondItem="TzY-OF-zPW" secondAttribute="bottom" id="UY9-yX-oqm"/>
+                                    <constraint firstAttribute="trailing" secondItem="TzY-OF-zPW" secondAttribute="trailing" id="dRz-6F-bWO"/>
+                                    <constraint firstItem="TzY-OF-zPW" firstAttribute="top" secondItem="Hx8-4T-qZw" secondAttribute="top" id="olp-3L-xc9"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Hx8-4T-qZw" firstAttribute="leading" secondItem="hSU-og-nPz" secondAttribute="leading" id="5W0-Ru-TgK"/>
+                            <constraint firstItem="Hx8-4T-qZw" firstAttribute="top" secondItem="hSU-og-nPz" secondAttribute="top" id="9cQ-gp-QCe"/>
+                            <constraint firstItem="hSU-og-nPz" firstAttribute="bottom" secondItem="Hx8-4T-qZw" secondAttribute="bottom" id="buU-bx-0db"/>
+                            <constraint firstItem="hSU-og-nPz" firstAttribute="trailing" secondItem="Hx8-4T-qZw" secondAttribute="trailing" id="h6F-YE-Y4P"/>
+                            <constraint firstItem="TzY-OF-zPW" firstAttribute="width" secondItem="0X8-hI-xVW" secondAttribute="width" id="wjA-a5-x4j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hSU-og-nPz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lhp-Bl-PDl">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="nwt-fU-QBS">
+                            <rect key="frame" x="107" y="4" width="200" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Access" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSH-xN-Xyo">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="27"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bLW-Za-Bgq">
+                                    <rect key="frame" x="0.0" y="32" width="200" height="2"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                </progressView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="GTT-uu-6ha">
+                            <connections>
+                                <action selector="login:" destination="Bd0-b2-gNS" id="Ez3-on-4hk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="k7F-f9-DBS" kind="show" identifier="showApiKey" id="yhO-TN-fec"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0uL-iV-yVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1361" y="133"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Onboarding" width="1125" height="1488"/>
+    </resources>
+</document>

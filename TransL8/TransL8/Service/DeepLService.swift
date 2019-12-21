@@ -14,7 +14,7 @@ import Moya
 
 enum DeepLService {
 
-	case retrieveUsage
+	case retrieveUsage(apiKey: String)
 	case translate(_ text: String)
 }
 
@@ -26,7 +26,7 @@ extension DeepLService: TargetType {
   
   var path: String {
     switch self {
-    case .retrieveUsage:
+    case .retrieveUsage(_):
       return "/usage"
 
     case .translate(_):
@@ -39,14 +39,14 @@ extension DeepLService: TargetType {
   }
   
   var task: Task {
-		let apiKey = PreferencesController.shared.apiKey ?? ""
-		var params = ["auth_key": apiKey]
+		var params : [String: String] = [:]
 
     switch self {
-    case .retrieveUsage:
-			()
+    case .retrieveUsage(let apiKey):
+			params["auth_key"] = apiKey
 
     case .translate(let text):
+			params["auth_key"] = PreferencesController.shared.apiKey ?? ""
 			params["target_lang"] = PreferencesController.shared.lang
 			params["text"] = text
 		}
@@ -55,7 +55,7 @@ extension DeepLService: TargetType {
 	}
   
 	var headers: [String : String]? {
-		return [:]
+		return nil
 	}
   
   var sampleData: Data {

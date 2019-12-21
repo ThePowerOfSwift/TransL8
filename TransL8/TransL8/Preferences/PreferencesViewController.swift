@@ -14,27 +14,37 @@ class PreferencesViewController: UIViewController, UITextFieldDelegate {
   
 	@IBOutlet weak var languageSwitch: UISegmentedControl!
 	@IBOutlet weak var apiKeyView: UITextField!
-  @IBOutlet weak var stateView: UILabel!
-	@IBOutlet weak var saveButton: UIBarButtonItem!
+	@IBOutlet weak var statusLabel: UILabel!
 	
   let service = MoyaProvider<DeepLService>()
 
+	var lang : String? {
+		didSet {
+			languageSwitch.selectedSegmentIndex = PreferencesController.languages.firstIndex(of: lang ?? "") ?? 0
+		}
+	}
+
+	var apiKey: String? {
+		didSet {
+			apiKeyView.text = apiKey ?? ""
+		}
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		languageSwitch.selectedSegmentIndex = PreferencesController.languages.firstIndex(of: PreferencesController.shared.lang) ?? 0
-		apiKeyView.text = PreferencesController.shared.apiKey
-		stateView.text = ""
+
+		lang = PreferencesController.shared.lang
+		apiKey = PreferencesController.shared.apiKey
+		statusLabel.text = ""
 	}
 
 	@IBAction func changeLang() {
-		PreferencesController.shared.lang = PreferencesController.languages[languageSwitch.selectedSegmentIndex]
+		view.endEditing(true)
+		lang = PreferencesController.languages[languageSwitch.selectedSegmentIndex]
 	}
 	
 	@IBAction func changeText(_ sender: UITextField) {
-		if sender == apiKeyView {
-			PreferencesController.shared.apiKey = apiKeyView.text!
-		}
+		apiKey = apiKeyView.text!
 	}
 
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -43,25 +53,34 @@ class PreferencesViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	@IBAction func update() {
-		guard let apiKey = PreferencesController.shared.apiKey, !apiKey.isEmpty else { return }
+		guard let apiKey = apiKey else { return }
 		view.endEditing(true)
 		
 		Root.shared.isBusy = true
-		service.request(.retrieveUsage) { [weak self] result in
+		service.request(.retrieveUsage(apiKey: apiKey)) { [weak self] result in
       guard let self = self else { return }
       
 			Root.shared.isBusy = false
 			switch result {
 			case .success(let response):
 				if let usage = try? response.data.decoded() as DeepL.Usage {
-					self.stateView.text = "Used characters: \(usage.characterCount)\nAvailable Characters: \(usage.characterLimit)"
+					self.statusLabel.text = usage.formatted
 				}
 				else {
-					Root.shared.showBanner(message: String(format: "Error logging in: '%@'", String(data: response.data, encoding: .utf8) ?? ""))
+					self.statusLabel.text = String(format: "Error logging in: '%@'", String(data: response.data, encoding: .utf8) ?? "")
 				}
 			case .failure(let error):
-				Root.shared.showBanner(message: error.localizedDescription)
+				self.statusLabel.text = String(format: "Network error: '%@'", error.localizedDescription)
 			}
 		}
+	}
+
+	@IBAction func save(_ sender: UIBarButtonItem) {
+		view.endEditing(true)
+		guard let lang = lang, let apiKey = apiKey else { return }
+
+		PreferencesController.shared.lang = lang
+		PreferencesController.shared.apiKey = apiKey
+		self.navigationController?.popViewController(animated: true)
 	}
 }

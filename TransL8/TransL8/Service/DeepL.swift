@@ -28,3 +28,15 @@ struct DeepL: Codable {
 		let translations: [Translation]
 	}
 }
+
+
+extension DeepL.Usage {
+	
+	var formatted: String {
+		var rate: Float = 0
+		if characterLimit > 0 {
+			rate = Float(characterCount) / Float(characterLimit) * 100
+		}
+		return String(format: "Usage: %.02f%%\nUsed characters: %d\nAvailable Characters: %d", rate, characterCount, characterLimit)
+	}
+}

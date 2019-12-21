@@ -100,6 +100,10 @@ class TranslateViewController: UIViewController {
 			}
 		}
 	}
+	
+	@IBAction func tapBackground(_ sender: UITapGestureRecognizer) {
+		view.endEditing(true)
+	}
 }
 
 

@@ -24,3 +24,10 @@ class PreferencesController: NSObject {
 	@Storage(key: "pairCache", defaultValue: [])
   var pairCache: [TextPair]
 }
+
+
+extension PreferencesController {
+	var isValidAccess: Bool {
+		return !(apiKey?.isEmpty ?? true)
+	}
+}

@@ -19,6 +19,10 @@ class Root {
 		}
 	}
 
+	func restart() {
+		rootViewController?.restart()
+	}
+
   func showBanner(message: String) {
     rootViewController?.showBanner(message: message)
   }
@@ -69,6 +73,24 @@ class RootViewController: UIViewController {
       }
     }
   }
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		restart()
+	}
+
+	func restart() {
+		liftChild(contentView)
+		if PreferencesController.shared.isValidAccess {
+			let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNavigationController")
+			embedChild(vc, container: contentView)
+		}
+		else {
+			let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()!
+			embedChild(vc, container: contentView)
+		}
+	}
 }
 
 extension RootViewController {

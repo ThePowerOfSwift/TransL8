@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		09FD22EDD927F420D6141F1F /* Pods_TransL8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB0E1217208711C670C3D28 /* Pods_TransL8.framework */; };
+		DE03590023AE6D1D001D7B35 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0358FF23AE6D1D001D7B35 /* Preferences.storyboard */; };
+		DE0DBE4323AE5A44005E2570 /* OnboardingAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE3A23AE5A44005E2570 /* OnboardingAccessViewController.swift */; };
+		DE0DBE4423AE5A44005E2570 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0DBE3B23AE5A44005E2570 /* Onboarding.storyboard */; };
+		DE0DBE4723AE5A44005E2570 /* OnboardingApiKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE3E23AE5A44005E2570 /* OnboardingApiKeyViewController.swift */; };
+		DE0DBE4A23AE5A44005E2570 /* OnboardingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE4123AE5A44005E2570 /* OnboardingNavigationController.swift */; };
+		DE0DBE4B23AE5A44005E2570 /* Onboarding.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE0DBE4223AE5A44005E2570 /* Onboarding.xcassets */; };
+		DE0DBE4D23AE5CCD005E2570 /* OnboardingIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE4C23AE5CCC005E2570 /* OnboardingIntroViewController.swift */; };
+		DE0DBE4F23AE6740005E2570 /* UIViewController+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE4E23AE6740005E2570 /* UIViewController+Embed.swift */; };
 		DE93D88523AD7DCE00FC9D74 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86923AD7DCE00FC9D74 /* Storage.swift */; };
 		DE93D88623AD7DCE00FC9D74 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86A23AD7DCE00FC9D74 /* SecureStorage.swift */; };
 		DE93D88723AD7DCE00FC9D74 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86B23AD7DCE00FC9D74 /* PreferencesViewController.swift */; };
@@ -37,6 +45,14 @@
 		791D1F3D965E7D470547D887 /* Pods-TransL8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransL8.debug.xcconfig"; path = "Target Support Files/Pods-TransL8/Pods-TransL8.debug.xcconfig"; sourceTree = "<group>"; };
 		9CB0E1217208711C670C3D28 /* Pods_TransL8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransL8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B1DCCF245F9EAC2119BDAF /* Pods-TransL8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransL8.release.xcconfig"; path = "Target Support Files/Pods-TransL8/Pods-TransL8.release.xcconfig"; sourceTree = "<group>"; };
+		DE0358FF23AE6D1D001D7B35 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
+		DE0DBE3A23AE5A44005E2570 /* OnboardingAccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingAccessViewController.swift; sourceTree = "<group>"; };
+		DE0DBE3B23AE5A44005E2570 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		DE0DBE3E23AE5A44005E2570 /* OnboardingApiKeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingApiKeyViewController.swift; sourceTree = "<group>"; };
+		DE0DBE4123AE5A44005E2570 /* OnboardingNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingNavigationController.swift; sourceTree = "<group>"; };
+		DE0DBE4223AE5A44005E2570 /* Onboarding.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Onboarding.xcassets; sourceTree = "<group>"; };
+		DE0DBE4C23AE5CCC005E2570 /* OnboardingIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingIntroViewController.swift; sourceTree = "<group>"; };
+		DE0DBE4E23AE6740005E2570 /* UIViewController+Embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Embed.swift"; sourceTree = "<group>"; };
 		DE93D86923AD7DCE00FC9D74 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DE93D86A23AD7DCE00FC9D74 /* SecureStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		DE93D86B23AD7DCE00FC9D74 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
@@ -93,9 +109,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DE0DBE3923AE5A44005E2570 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DE0DBE3B23AE5A44005E2570 /* Onboarding.storyboard */,
+				DE0DBE4C23AE5CCC005E2570 /* OnboardingIntroViewController.swift */,
+				DE0DBE3A23AE5A44005E2570 /* OnboardingAccessViewController.swift */,
+				DE0DBE3E23AE5A44005E2570 /* OnboardingApiKeyViewController.swift */,
+				DE0DBE4123AE5A44005E2570 /* OnboardingNavigationController.swift */,
+				DE0DBE4223AE5A44005E2570 /* Onboarding.xcassets */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		DE93D86723AD7DCE00FC9D74 /* TransL8 */ = {
 			isa = PBXGroup;
 			children = (
+				DE0DBE3923AE5A44005E2570 /* Onboarding */,
 				DE93D86823AD7DCE00FC9D74 /* Preferences */,
 				DE93D86D23AD7DCE00FC9D74 /* Translation */,
 				DE93D87C23AD7DCE00FC9D74 /* Service */,
@@ -115,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				DE93D86C23AD7DCE00FC9D74 /* PreferencesController.swift */,
+				DE0358FF23AE6D1D001D7B35 /* Preferences.storyboard */,
 				DE93D86B23AD7DCE00FC9D74 /* PreferencesViewController.swift */,
 				DE93D86923AD7DCE00FC9D74 /* Storage.swift */,
 				DE93D86A23AD7DCE00FC9D74 /* SecureStorage.swift */,
@@ -152,6 +183,7 @@
 				DE93D88023AD7DCE00FC9D74 /* Data+JSONDecode.swift */,
 				DE93D88123AD7DCE00FC9D74 /* Double+AnimationDefault.swift */,
 				DE93D88223AD7DCE00FC9D74 /* UIView+Border.swift */,
+				DE0DBE4E23AE6740005E2570 /* UIViewController+Embed.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -234,9 +266,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0DBE4B23AE5A44005E2570 /* Onboarding.xcassets in Resources */,
 				DE93D89423AD7DCE00FC9D74 /* Main.storyboard in Resources */,
 				DE93D89223AD7DCE00FC9D74 /* Assets.xcassets in Resources */,
+				DE03590023AE6D1D001D7B35 /* Preferences.storyboard in Resources */,
 				DE93D89323AD7DCE00FC9D74 /* LaunchScreen.storyboard in Resources */,
+				DE0DBE4423AE5A44005E2570 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +325,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE93D88923AD7DCE00FC9D74 /* TranslationViewController+Scan.swift in Sources */,
+				DE0DBE4323AE5A44005E2570 /* OnboardingAccessViewController.swift in Sources */,
 				DE93D89923AD7DCE00FC9D74 /* Double+AnimationDefault.swift in Sources */,
+				DE0DBE4723AE5A44005E2570 /* OnboardingApiKeyViewController.swift in Sources */,
 				DE93D89823AD7DCE00FC9D74 /* Data+JSONDecode.swift in Sources */,
 				DE93D88C23AD7DCE00FC9D74 /* TranslationViewController+Record.swift in Sources */,
 				DE93D88823AD7DCE00FC9D74 /* PreferencesController.swift in Sources */,
+				DE0DBE4F23AE6740005E2570 /* UIViewController+Embed.swift in Sources */,
 				DE93D88D23AD7DCE00FC9D74 /* TranslationViewController+Clipboard.swift in Sources */,
 				DE93D89523AD7DCE00FC9D74 /* AppDelegate.swift in Sources */,
+				DE0DBE4D23AE5CCD005E2570 /* OnboardingIntroViewController.swift in Sources */,
 				DE93D89123AD7DCE00FC9D74 /* RootViewController.swift in Sources */,
 				DE93D88F23AD7DCE00FC9D74 /* TranslationViewController+Action.swift in Sources */,
 				DE93D89023AD7DCE00FC9D74 /* TranslateViewController.swift in Sources */,
@@ -308,6 +347,7 @@
 				DE93D88A23AD7DCE00FC9D74 /* TranslationEngine.swift in Sources */,
 				DE93D89623AD7DCE00FC9D74 /* DeepL.swift in Sources */,
 				DE93D88523AD7DCE00FC9D74 /* Storage.swift in Sources */,
+				DE0DBE4A23AE5A44005E2570 /* OnboardingNavigationController.swift in Sources */,
 				DE93D88723AD7DCE00FC9D74 /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
