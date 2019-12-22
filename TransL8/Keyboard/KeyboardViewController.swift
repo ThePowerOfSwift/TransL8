@@ -14,46 +14,23 @@ class KeyboardViewController: UIInputViewController {
 	var retrieveButton: UIButton!
 	var outputLabel: UILabel!
 	
-	lazy var queue = DispatchQueue(label: "keybd")
-
 	override func updateViewConstraints() {
 		super.updateViewConstraints()
 		
 		// Add custom view sizing constraints here
 	}
-	
-	func enqueue (milli: Int, callback: @escaping () -> ()) {
-		queue.asyncAfter(deadline: DispatchTime.now() + .milliseconds(milli)) {
-			DispatchQueue.main.async {
-				callback()
-			}
-		}
-	}
 
 	@objc func translateText() {
 		let proxy = textDocumentProxy
-		let textBefore = proxy.documentContextBeforeInput ?? ""
-		let textSelected = proxy.selectedText ?? ""
-		let textAfter = proxy.documentContextAfterInput ?? ""
-		var text = String(textBefore + textSelected + textAfter)
-		text = String(text.reversed())
+		guard var text = proxy.selectedText, text.count > 0 else {
+			outputLabel.text = "Please select a text first"
+			return
+		}
 
-		enqueue(milli: 0) {
-			proxy.unmarkText()
-		}
-		enqueue(milli: 100) {
-			proxy.adjustTextPosition(byCharacterOffset: textAfter.count)
-		}
-		enqueue(milli: 200) {
-			for _ in 0..<text.count {
-				proxy.deleteBackward()
-			}
-		}
-		enqueue(milli: 300) {
-			proxy.insertText(text)
-		}
+		text = String(text.reversed())
+		proxy.insertText(text)
 		
-		outputLabel.text = String(textBefore) + "\n" + String(textSelected) + "\n" + String(textAfter)
+		outputLabel.text = text
 	}
 	
 	override func viewDidLoad() {
@@ -79,7 +56,7 @@ class KeyboardViewController: UIInputViewController {
 		view.addSubview(retrieveButton)
 		
 		outputLabel = UILabel(frame: CGRect(x: 0, y: 20, width: 300, height: 200))
-		outputLabel.font = UIFont.systemFont(ofSize: 8)
+		outputLabel.font = UIFont.systemFont(ofSize: 10)
 		outputLabel.numberOfLines = 0
 		outputLabel.text = "..."
 		view.addSubview(outputLabel)
