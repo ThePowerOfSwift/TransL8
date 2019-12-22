@@ -16,8 +16,6 @@
 		DE0DBE4B23AE5A44005E2570 /* Onboarding.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE0DBE4223AE5A44005E2570 /* Onboarding.xcassets */; };
 		DE0DBE4D23AE5CCD005E2570 /* OnboardingIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE4C23AE5CCC005E2570 /* OnboardingIntroViewController.swift */; };
 		DE0DBE4F23AE6740005E2570 /* UIViewController+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE4E23AE6740005E2570 /* UIViewController+Embed.swift */; };
-		DE2D14C823AFCE3700E2FBD5 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2D14C723AFCE3700E2FBD5 /* KeyboardViewController.swift */; };
-		DE2D14CC23AFCE3700E2FBD5 /* Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE2D14C523AFCE3700E2FBD5 /* Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE93D88523AD7DCE00FC9D74 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86923AD7DCE00FC9D74 /* Storage.swift */; };
 		DE93D88623AD7DCE00FC9D74 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86A23AD7DCE00FC9D74 /* SecureStorage.swift */; };
 		DE93D88723AD7DCE00FC9D74 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86B23AD7DCE00FC9D74 /* PreferencesViewController.swift */; };
@@ -41,19 +39,7 @@
 		DE93D89923AD7DCE00FC9D74 /* Double+AnimationDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D88123AD7DCE00FC9D74 /* Double+AnimationDefault.swift */; };
 		DE93D89A23AD7DCE00FC9D74 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D88223AD7DCE00FC9D74 /* UIView+Border.swift */; };
 		DE93D89C23AD7DCE00FC9D74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D88423AD7DCE00FC9D74 /* SceneDelegate.swift */; };
-		DECE07E723B0273600170DD4 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECE07E623B0273600170DD4 /* KeyboardViewController.swift */; };
-		DECE07EB23B0273600170DD4 /* Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DECE07E423B0273600170DD4 /* Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DECE07E923B0273600170DD4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DEB1DF9723A7595B00ED0715 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DECE07E323B0273600170DD4;
-			remoteInfo = Keyboard;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DECE07EC23B0273600170DD4 /* Embed App Extensions */ = {
@@ -62,7 +48,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				DECE07EB23B0273600170DD4 /* Keyboard.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,9 +66,6 @@
 		DE0DBE4223AE5A44005E2570 /* Onboarding.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Onboarding.xcassets; sourceTree = "<group>"; };
 		DE0DBE4C23AE5CCC005E2570 /* OnboardingIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingIntroViewController.swift; sourceTree = "<group>"; };
 		DE0DBE4E23AE6740005E2570 /* UIViewController+Embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Embed.swift"; sourceTree = "<group>"; };
-		DE2D14C523AFCE3700E2FBD5 /* Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE2D14C723AFCE3700E2FBD5 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
-		DE2D14C923AFCE3700E2FBD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE93D86923AD7DCE00FC9D74 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DE93D86A23AD7DCE00FC9D74 /* SecureStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		DE93D86B23AD7DCE00FC9D74 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
@@ -109,31 +91,16 @@
 		DE93D88323AD7DCE00FC9D74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE93D88423AD7DCE00FC9D74 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DEB1DF9F23A7595B00ED0715 /* TransL8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransL8.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DECE07E423B0273600170DD4 /* Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECE07E623B0273600170DD4 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		DECE07E823B0273600170DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DE2D14C223AFCE3700E2FBD5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DEB1DF9C23A7595B00ED0715 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				09FD22EDD927F420D6141F1F /* Pods_TransL8.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DECE07E123B0273600170DD4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,15 +135,6 @@
 				DE0DBE4223AE5A44005E2570 /* Onboarding.xcassets */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		DE2D14C623AFCE3700E2FBD5 /* Keyboard */ = {
-			isa = PBXGroup;
-			children = (
-				DE2D14C723AFCE3700E2FBD5 /* KeyboardViewController.swift */,
-				DE2D14C923AFCE3700E2FBD5 /* Info.plist */,
-			);
-			path = Keyboard;
 			sourceTree = "<group>";
 		};
 		DE93D86723AD7DCE00FC9D74 /* TransL8 */ = {
@@ -260,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				DEB1DF9F23A7595B00ED0715 /* TransL8.app */,
-				DECE07E423B0273600170DD4 /* Keyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -277,23 +234,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DE2D14C423AFCE3700E2FBD5 /* Keyboard */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE2D14D023AFCE3800E2FBD5 /* Build configuration list for PBXNativeTarget "Keyboard" */;
-			buildPhases = (
-				DE2D14C123AFCE3700E2FBD5 /* Sources */,
-				DE2D14C223AFCE3700E2FBD5 /* Frameworks */,
-				DE2D14C323AFCE3700E2FBD5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Keyboard;
-			productName = Keyboard;
-			productReference = DE2D14C523AFCE3700E2FBD5 /* Keyboard.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		DEB1DF9E23A7595B00ED0715 /* TransL8 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEB1DFB323A7596D00ED0715 /* Build configuration list for PBXNativeTarget "TransL8" */;
@@ -308,29 +248,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				DECE07EA23B0273600170DD4 /* PBXTargetDependency */,
 			);
 			name = TransL8;
 			productName = TransL8;
 			productReference = DEB1DF9F23A7595B00ED0715 /* TransL8.app */;
 			productType = "com.apple.product-type.application";
-		};
-		DECE07E323B0273600170DD4 /* Keyboard */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DECE07EF23B0273600170DD4 /* Build configuration list for PBXNativeTarget "Keyboard" */;
-			buildPhases = (
-				DECE07E023B0273600170DD4 /* Sources */,
-				DECE07E123B0273600170DD4 /* Frameworks */,
-				DECE07E223B0273600170DD4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Keyboard;
-			productName = Keyboard;
-			productReference = DECE07E423B0273600170DD4 /* Keyboard.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -342,13 +264,7 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Oliver Michalak";
 				TargetAttributes = {
-					DE2D14C423AFCE3700E2FBD5 = {
-						CreatedOnToolsVersion = 11.3;
-					};
 					DEB1DF9E23A7595B00ED0715 = {
-						CreatedOnToolsVersion = 11.3;
-					};
-					DECE07E323B0273600170DD4 = {
 						CreatedOnToolsVersion = 11.3;
 					};
 				};
@@ -367,19 +283,11 @@
 			projectRoot = "";
 			targets = (
 				DEB1DF9E23A7595B00ED0715 /* TransL8 */,
-				DECE07E323B0273600170DD4 /* Keyboard */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DE2D14C323AFCE3700E2FBD5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DEB1DF9D23A7595B00ED0715 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,13 +298,6 @@
 				DE03590023AE6D1D001D7B35 /* Preferences.storyboard in Resources */,
 				DE93D89323AD7DCE00FC9D74 /* LaunchScreen.storyboard in Resources */,
 				DE0DBE4423AE5A44005E2570 /* Onboarding.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DECE07E223B0273600170DD4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,14 +346,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DE2D14C123AFCE3700E2FBD5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE2D14C823AFCE3700E2FBD5 /* KeyboardViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DEB1DF9B23A7595B00ED0715 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,23 +378,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DECE07E023B0273600170DD4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DECE07E723B0273600170DD4 /* KeyboardViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DECE07EA23B0273600170DD4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DECE07E323B0273600170DD4 /* Keyboard */;
-			targetProxy = DECE07E923B0273600170DD4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DE93D87823AD7DCE00FC9D74 /* LaunchScreen.storyboard */ = {
@@ -515,44 +392,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DE2D14CE23AFCE3800E2FBD5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6ZU459JA6J;
-				INFOPLIST_FILE = Keyboard/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.Keyboard;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DE2D14CF23AFCE3800E2FBD5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6ZU459JA6J;
-				INFOPLIST_FILE = Keyboard/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.Keyboard;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		DEB1DFB123A7596D00ED0715 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -711,56 +550,9 @@
 			};
 			name = Release;
 		};
-		DECE07ED23B0273600170DD4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6ZU459JA6J;
-				INFOPLIST_FILE = Keyboard/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.Keyboard;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DECE07EE23B0273600170DD4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6ZU459JA6J;
-				INFOPLIST_FILE = Keyboard/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.Keyboard;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DE2D14D023AFCE3800E2FBD5 /* Build configuration list for PBXNativeTarget "Keyboard" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE2D14CE23AFCE3800E2FBD5 /* Debug */,
-				DE2D14CF23AFCE3800E2FBD5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DEB1DF9A23A7595B00ED0715 /* Build configuration list for PBXProject "TransL8" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -775,15 +567,6 @@
 			buildConfigurations = (
 				DEB1DFB423A7596D00ED0715 /* Debug */,
 				DEB1DFB523A7596D00ED0715 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DECE07EF23B0273600170DD4 /* Build configuration list for PBXNativeTarget "Keyboard" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DECE07ED23B0273600170DD4 /* Debug */,
-				DECE07EE23B0273600170DD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
