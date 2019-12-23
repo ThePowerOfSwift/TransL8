@@ -14,7 +14,7 @@ struct Storage<T: Codable> {
 
 	private let key: String
 	private let defaultValue: T
-	private let store = UserDefaults.standard
+	private let store = UserDefaults(suiteName: "group.werk01.TransL8")!
 
 	init(key: String, defaultValue: T) {
 		self.key = key

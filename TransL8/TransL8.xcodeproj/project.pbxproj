@@ -93,6 +93,7 @@
 		DEB1DF9F23A7595B00ED0715 /* TransL8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransL8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECE07E623B0273600170DD4 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		DECE07E823B0273600170DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DECE07F023B0D0DB00170DD4 /* TransL8.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TransL8.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +141,7 @@
 		DE93D86723AD7DCE00FC9D74 /* TransL8 */ = {
 			isa = PBXGroup;
 			children = (
+				DECE07F023B0D0DB00170DD4 /* TransL8.entitlements */,
 				DE0DBE3923AE5A44005E2570 /* Onboarding */,
 				DE93D86823AD7DCE00FC9D74 /* Preferences */,
 				DE93D86D23AD7DCE00FC9D74 /* Translation */,
@@ -512,6 +514,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TransL8/TransL8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
@@ -534,6 +537,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TransL8/TransL8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;

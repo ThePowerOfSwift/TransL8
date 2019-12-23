@@ -15,7 +15,11 @@ struct SecureStorage<T: Codable> {
 
 	private let key: String
 	private let defaultValue: T
-	private let store = KeychainSwift()
+	private let store : KeychainSwift = {
+		let kc = KeychainSwift()
+		kc.accessGroup = "group.werk01.TransL8"
+		return kc
+	}()
 
 	init(key: String, defaultValue: T) {
 		self.key = key
