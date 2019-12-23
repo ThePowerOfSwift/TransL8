@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09FD22EDD927F420D6141F1F /* Pods_TransL8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB0E1217208711C670C3D28 /* Pods_TransL8.framework */; };
+		8C4071192D43EA2E27B1FFA3 /* Pods_Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B604017066DF14F169D2B4C0 /* Pods_Action.framework */; };
 		DE03590023AE6D1D001D7B35 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0358FF23AE6D1D001D7B35 /* Preferences.storyboard */; };
 		DE0DBE4323AE5A44005E2570 /* OnboardingAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE3A23AE5A44005E2570 /* OnboardingAccessViewController.swift */; };
 		DE0DBE4423AE5A44005E2570 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0DBE3B23AE5A44005E2570 /* Onboarding.storyboard */; };
@@ -39,7 +40,34 @@
 		DE93D89923AD7DCE00FC9D74 /* Double+AnimationDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D88123AD7DCE00FC9D74 /* Double+AnimationDefault.swift */; };
 		DE93D89A23AD7DCE00FC9D74 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D88223AD7DCE00FC9D74 /* UIView+Border.swift */; };
 		DE93D89C23AD7DCE00FC9D74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D88423AD7DCE00FC9D74 /* SceneDelegate.swift */; };
+		DEB8892223B0D7E900906681 /* TranslationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86F23AD7DCE00FC9D74 /* TranslationEngine.swift */; };
+		DEB8892323B0D7E900906681 /* TextPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D87323AD7DCE00FC9D74 /* TextPair.swift */; };
+		DEB8892423B0D7E900906681 /* DeepL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D87D23AD7DCE00FC9D74 /* DeepL.swift */; };
+		DEB8892523B0D7E900906681 /* DeepLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D87E23AD7DCE00FC9D74 /* DeepLService.swift */; };
+		DEB8892623B0D7EF00906681 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86C23AD7DCE00FC9D74 /* PreferencesController.swift */; };
+		DEB8892723B0D7EF00906681 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86923AD7DCE00FC9D74 /* Storage.swift */; };
+		DEB8892823B0D7EF00906681 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86A23AD7DCE00FC9D74 /* SecureStorage.swift */; };
+		DEB8893723B10F1C00906681 /* Data+JSONDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D88023AD7DCE00FC9D74 /* Data+JSONDecode.swift */; };
+		DEB8893823B10F1C00906681 /* Double+AnimationDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D88123AD7DCE00FC9D74 /* Double+AnimationDefault.swift */; };
+		DEB8893923B10F1C00906681 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D88223AD7DCE00FC9D74 /* UIView+Border.swift */; };
+		DEB8893A23B10F1C00906681 /* UIViewController+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE4E23AE6740005E2570 /* UIViewController+Embed.swift */; };
+		DEB8893D23B1143200906681 /* Array+NSExtensionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB8893C23B1143200906681 /* Array+NSExtensionItem.swift */; };
+		DEB8893E23B1143200906681 /* Array+NSExtensionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB8893C23B1143200906681 /* Array+NSExtensionItem.swift */; };
+		DECE07FA23B0D40F00170DD4 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECE07F923B0D40F00170DD4 /* Media.xcassets */; };
+		DECE07FC23B0D40F00170DD4 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECE07FB23B0D40F00170DD4 /* ActionViewController.swift */; };
+		DECE07FF23B0D40F00170DD4 /* MainAction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECE07FD23B0D40F00170DD4 /* MainAction.storyboard */; };
+		DECE080323B0D40F00170DD4 /* TransL8 in Action.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DECE07F723B0D40F00170DD4 /* TransL8 in Action.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DECE080123B0D40F00170DD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEB1DF9723A7595B00ED0715 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DECE07F623B0D40F00170DD4;
+			remoteInfo = Action;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DECE07EC23B0273600170DD4 /* Embed App Extensions */ = {
@@ -48,6 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				DECE080323B0D40F00170DD4 /* TransL8 in Action.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,8 +84,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F1549A505028F5F56AB6588 /* Pods-Action.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Action.release.xcconfig"; path = "Target Support Files/Pods-Action/Pods-Action.release.xcconfig"; sourceTree = "<group>"; };
+		5A0B82801ED3AF1C03E31A38 /* Pods-Action.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Action.debug.xcconfig"; path = "Target Support Files/Pods-Action/Pods-Action.debug.xcconfig"; sourceTree = "<group>"; };
 		791D1F3D965E7D470547D887 /* Pods-TransL8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransL8.debug.xcconfig"; path = "Target Support Files/Pods-TransL8/Pods-TransL8.debug.xcconfig"; sourceTree = "<group>"; };
 		9CB0E1217208711C670C3D28 /* Pods_TransL8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransL8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B604017066DF14F169D2B4C0 /* Pods_Action.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Action.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B1DCCF245F9EAC2119BDAF /* Pods-TransL8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransL8.release.xcconfig"; path = "Target Support Files/Pods-TransL8/Pods-TransL8.release.xcconfig"; sourceTree = "<group>"; };
 		DE0358FF23AE6D1D001D7B35 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		DE0DBE3A23AE5A44005E2570 /* OnboardingAccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingAccessViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +123,14 @@
 		DE93D88323AD7DCE00FC9D74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE93D88423AD7DCE00FC9D74 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DEB1DF9F23A7595B00ED0715 /* TransL8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransL8.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEB8893B23B1113C00906681 /* TransL8 in Action.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TransL8 in Action.entitlements"; sourceTree = "<group>"; };
+		DEB8893C23B1143200906681 /* Array+NSExtensionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+NSExtensionItem.swift"; sourceTree = "<group>"; };
 		DECE07F023B0D0DB00170DD4 /* TransL8.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TransL8.entitlements; sourceTree = "<group>"; };
+		DECE07F723B0D40F00170DD4 /* TransL8 in Action.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TransL8 in Action.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DECE07F923B0D40F00170DD4 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		DECE07FB23B0D40F00170DD4 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		DECE07FE23B0D40F00170DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainAction.storyboard; sourceTree = "<group>"; };
+		DECE080023B0D40F00170DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +142,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DECE07F423B0D40F00170DD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C4071192D43EA2E27B1FFA3 /* Pods_Action.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -111,6 +158,8 @@
 			children = (
 				791D1F3D965E7D470547D887 /* Pods-TransL8.debug.xcconfig */,
 				B9B1DCCF245F9EAC2119BDAF /* Pods-TransL8.release.xcconfig */,
+				5A0B82801ED3AF1C03E31A38 /* Pods-Action.debug.xcconfig */,
+				4F1549A505028F5F56AB6588 /* Pods-Action.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -119,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				9CB0E1217208711C670C3D28 /* Pods_TransL8.framework */,
+				B604017066DF14F169D2B4C0 /* Pods_Action.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -149,7 +199,6 @@
 				DE93D87A23AD7DCE00FC9D74 /* Main.storyboard */,
 				DE93D87823AD7DCE00FC9D74 /* LaunchScreen.storyboard */,
 				DE93D87723AD7DCE00FC9D74 /* Assets.xcassets */,
-				DE93D87F23AD7DCE00FC9D74 /* Helper */,
 				DE93D88323AD7DCE00FC9D74 /* Info.plist */,
 			);
 			path = TransL8;
@@ -173,8 +222,6 @@
 				DE93D87023AD7DCE00FC9D74 /* TranslationViewController+Speak.swift */,
 				DE93D87123AD7DCE00FC9D74 /* TranslationViewController+Record.swift */,
 				DE93D87223AD7DCE00FC9D74 /* TranslationViewController+Clipboard.swift */,
-				DE93D86F23AD7DCE00FC9D74 /* TranslationEngine.swift */,
-				DE93D87323AD7DCE00FC9D74 /* TextPair.swift */,
 			);
 			path = Translation;
 			sourceTree = "<group>";
@@ -182,6 +229,8 @@
 		DE93D87C23AD7DCE00FC9D74 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DE93D86F23AD7DCE00FC9D74 /* TranslationEngine.swift */,
+				DE93D87323AD7DCE00FC9D74 /* TextPair.swift */,
 				DE93D87D23AD7DCE00FC9D74 /* DeepL.swift */,
 				DE93D87E23AD7DCE00FC9D74 /* DeepLService.swift */,
 			);
@@ -195,6 +244,7 @@
 				DE93D88123AD7DCE00FC9D74 /* Double+AnimationDefault.swift */,
 				DE93D88223AD7DCE00FC9D74 /* UIView+Border.swift */,
 				DE0DBE4E23AE6740005E2570 /* UIViewController+Embed.swift */,
+				DEB8893C23B1143200906681 /* Array+NSExtensionItem.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -204,6 +254,7 @@
 			children = (
 				DECE07F123B0D38400170DD4 /* Shared */,
 				DE93D86723AD7DCE00FC9D74 /* TransL8 */,
+				DECE07F823B0D40F00170DD4 /* Action */,
 				DEB1DFA023A7595B00ED0715 /* Products */,
 				1F04119FDBD3185448C86436 /* Pods */,
 				64DD36EAAE5AAFBCD2FACDBE /* Frameworks */,
@@ -214,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB1DF9F23A7595B00ED0715 /* TransL8.app */,
+				DECE07F723B0D40F00170DD4 /* TransL8 in Action.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,6 +275,7 @@
 			children = (
 				DE93D87C23AD7DCE00FC9D74 /* Service */,
 				DECE07F223B0D3AA00170DD4 /* Preferences */,
+				DE93D87F23AD7DCE00FC9D74 /* Helper */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -235,6 +288,18 @@
 				DE93D86A23AD7DCE00FC9D74 /* SecureStorage.swift */,
 			);
 			path = Preferences;
+			sourceTree = "<group>";
+		};
+		DECE07F823B0D40F00170DD4 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				DEB8893B23B1113C00906681 /* TransL8 in Action.entitlements */,
+				DECE07FB23B0D40F00170DD4 /* ActionViewController.swift */,
+				DECE07FD23B0D40F00170DD4 /* MainAction.storyboard */,
+				DECE07F923B0D40F00170DD4 /* Media.xcassets */,
+				DECE080023B0D40F00170DD4 /* Info.plist */,
+			);
+			path = Action;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,11 +319,30 @@
 			buildRules = (
 			);
 			dependencies = (
+				DECE080223B0D40F00170DD4 /* PBXTargetDependency */,
 			);
 			name = TransL8;
 			productName = TransL8;
 			productReference = DEB1DF9F23A7595B00ED0715 /* TransL8.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DECE07F623B0D40F00170DD4 /* Action */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DECE080423B0D40F00170DD4 /* Build configuration list for PBXNativeTarget "Action" */;
+			buildPhases = (
+				9EF427AB36ED7F286598666A /* [CP] Check Pods Manifest.lock */,
+				DECE07F323B0D40F00170DD4 /* Sources */,
+				DECE07F423B0D40F00170DD4 /* Frameworks */,
+				DECE07F523B0D40F00170DD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Action;
+			productName = Action;
+			productReference = DECE07F723B0D40F00170DD4 /* TransL8 in Action.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -271,6 +355,9 @@
 				ORGANIZATIONNAME = "Oliver Michalak";
 				TargetAttributes = {
 					DEB1DF9E23A7595B00ED0715 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					DECE07F623B0D40F00170DD4 = {
 						CreatedOnToolsVersion = 11.3;
 					};
 				};
@@ -289,6 +376,7 @@
 			projectRoot = "";
 			targets = (
 				DEB1DF9E23A7595B00ED0715 /* TransL8 */,
+				DECE07F623B0D40F00170DD4 /* Action */,
 			);
 		};
 /* End PBXProject section */
@@ -304,6 +392,15 @@
 				DE03590023AE6D1D001D7B35 /* Preferences.storyboard in Resources */,
 				DE93D89323AD7DCE00FC9D74 /* LaunchScreen.storyboard in Resources */,
 				DE0DBE4423AE5A44005E2570 /* Onboarding.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DECE07F523B0D40F00170DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DECE07FA23B0D40F00170DD4 /* Media.xcassets in Resources */,
+				DECE07FF23B0D40F00170DD4 /* MainAction.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +423,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TransL8-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EF427AB36ED7F286598666A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Action-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -365,6 +484,7 @@
 				DE93D88823AD7DCE00FC9D74 /* PreferencesController.swift in Sources */,
 				DE0DBE4F23AE6740005E2570 /* UIViewController+Embed.swift in Sources */,
 				DE93D88D23AD7DCE00FC9D74 /* TranslationViewController+Clipboard.swift in Sources */,
+				DEB8893D23B1143200906681 /* Array+NSExtensionItem.swift in Sources */,
 				DE93D89523AD7DCE00FC9D74 /* AppDelegate.swift in Sources */,
 				DE0DBE4D23AE5CCD005E2570 /* OnboardingIntroViewController.swift in Sources */,
 				DE93D89123AD7DCE00FC9D74 /* RootViewController.swift in Sources */,
@@ -384,7 +504,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DECE07F323B0D40F00170DD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB8893A23B10F1C00906681 /* UIViewController+Embed.swift in Sources */,
+				DEB8892623B0D7EF00906681 /* PreferencesController.swift in Sources */,
+				DEB8892723B0D7EF00906681 /* Storage.swift in Sources */,
+				DEB8892823B0D7EF00906681 /* SecureStorage.swift in Sources */,
+				DEB8892423B0D7E900906681 /* DeepL.swift in Sources */,
+				DECE07FC23B0D40F00170DD4 /* ActionViewController.swift in Sources */,
+				DEB8892523B0D7E900906681 /* DeepLService.swift in Sources */,
+				DEB8892223B0D7E900906681 /* TranslationEngine.swift in Sources */,
+				DEB8893723B10F1C00906681 /* Data+JSONDecode.swift in Sources */,
+				DEB8893E23B1143200906681 /* Array+NSExtensionItem.swift in Sources */,
+				DEB8892323B0D7E900906681 /* TextPair.swift in Sources */,
+				DEB8893823B10F1C00906681 /* Double+AnimationDefault.swift in Sources */,
+				DEB8893923B10F1C00906681 /* UIView+Border.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DECE080223B0D40F00170DD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DECE07F623B0D40F00170DD4 /* Action */;
+			targetProxy = DECE080123B0D40F00170DD4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DE93D87823AD7DCE00FC9D74 /* LaunchScreen.storyboard */ = {
@@ -393,6 +541,14 @@
 				DE93D87923AD7DCE00FC9D74 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DECE07FD23B0D40F00170DD4 /* MainAction.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DECE07FE23B0D40F00170DD4 /* Base */,
+			);
+			name = MainAction.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -516,11 +672,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 791D1F3D965E7D470547D887 /* Pods-TransL8.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TransL8/TransL8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = TransL8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -539,11 +695,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B9B1DCCF245F9EAC2119BDAF /* Pods-TransL8.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TransL8/TransL8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = TransL8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -555,6 +711,52 @@
 				PRODUCT_NAME = TransL8;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		DECE080523B0D40F00170DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A0B82801ED3AF1C03E31A38 /* Pods-Action.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = ActionIcon;
+				CODE_SIGN_ENTITLEMENTS = "Action/TransL8 in Action.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 6ZU459JA6J;
+				INFOPLIST_FILE = Action/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.Action;
+				PRODUCT_NAME = "TransL8 in Action";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DECE080623B0D40F00170DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F1549A505028F5F56AB6588 /* Pods-Action.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = ActionIcon;
+				CODE_SIGN_ENTITLEMENTS = "Action/TransL8 in Action.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 6ZU459JA6J;
+				INFOPLIST_FILE = Action/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.Action;
+				PRODUCT_NAME = "TransL8 in Action";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -575,6 +777,15 @@
 			buildConfigurations = (
 				DEB1DFB423A7596D00ED0715 /* Debug */,
 				DEB1DFB523A7596D00ED0715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DECE080423B0D40F00170DD4 /* Build configuration list for PBXNativeTarget "Action" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DECE080523B0D40F00170DD4 /* Debug */,
+				DECE080623B0D40F00170DD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

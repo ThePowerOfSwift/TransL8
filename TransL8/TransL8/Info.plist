@@ -22,10 +22,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.werk01.transL8</string>
+			<string>com.werk01.TransL8</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>transL8</string>
+				<string>TransL8</string>
 			</array>
 		</dict>
 	</array>
