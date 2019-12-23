@@ -91,8 +91,6 @@
 		DE93D88323AD7DCE00FC9D74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE93D88423AD7DCE00FC9D74 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DEB1DF9F23A7595B00ED0715 /* TransL8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransL8.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DECE07E623B0273600170DD4 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
-		DECE07E823B0273600170DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECE07F023B0D0DB00170DD4 /* TransL8.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TransL8.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,7 +143,6 @@
 				DE0DBE3923AE5A44005E2570 /* Onboarding */,
 				DE93D86823AD7DCE00FC9D74 /* Preferences */,
 				DE93D86D23AD7DCE00FC9D74 /* Translation */,
-				DE93D87C23AD7DCE00FC9D74 /* Service */,
 				DE93D87B23AD7DCE00FC9D74 /* AppDelegate.swift */,
 				DE93D88423AD7DCE00FC9D74 /* SceneDelegate.swift */,
 				DE93D87623AD7DCE00FC9D74 /* RootViewController.swift */,
@@ -161,11 +158,8 @@
 		DE93D86823AD7DCE00FC9D74 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				DE93D86C23AD7DCE00FC9D74 /* PreferencesController.swift */,
 				DE0358FF23AE6D1D001D7B35 /* Preferences.storyboard */,
 				DE93D86B23AD7DCE00FC9D74 /* PreferencesViewController.swift */,
-				DE93D86923AD7DCE00FC9D74 /* Storage.swift */,
-				DE93D86A23AD7DCE00FC9D74 /* SecureStorage.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -208,8 +202,8 @@
 		DEB1DF9623A7595B00ED0715 = {
 			isa = PBXGroup;
 			children = (
+				DECE07F123B0D38400170DD4 /* Shared */,
 				DE93D86723AD7DCE00FC9D74 /* TransL8 */,
-				DECE07E523B0273600170DD4 /* Keyboard */,
 				DEB1DFA023A7595B00ED0715 /* Products */,
 				1F04119FDBD3185448C86436 /* Pods */,
 				64DD36EAAE5AAFBCD2FACDBE /* Frameworks */,
@@ -224,13 +218,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DECE07E523B0273600170DD4 /* Keyboard */ = {
+		DECE07F123B0D38400170DD4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				DECE07E623B0273600170DD4 /* KeyboardViewController.swift */,
-				DECE07E823B0273600170DD4 /* Info.plist */,
+				DE93D87C23AD7DCE00FC9D74 /* Service */,
+				DECE07F223B0D3AA00170DD4 /* Preferences */,
 			);
-			path = Keyboard;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DECE07F223B0D3AA00170DD4 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				DE93D86C23AD7DCE00FC9D74 /* PreferencesController.swift */,
+				DE93D86923AD7DCE00FC9D74 /* Storage.swift */,
+				DE93D86A23AD7DCE00FC9D74 /* SecureStorage.swift */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
