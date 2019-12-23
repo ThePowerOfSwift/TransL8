@@ -16,7 +16,6 @@ extension TranslateViewController {
 	func setupRecord() {
 		recordRequest.shouldReportPartialResults = true
 		//		recorderRequest.requiresOnDeviceRecognition = true
-		micOverlay.isHidden = true
 		micInputButton.isEnabled = record?.isAvailable ?? false
 		micInputButton.tintColor = micInputButton.isEnabled ? enabledColor : disabledColor
 	}

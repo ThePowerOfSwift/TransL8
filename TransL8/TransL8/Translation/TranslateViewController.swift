@@ -55,6 +55,7 @@ class TranslateViewController: UIViewController {
 			let hasInput = !pair.sourceText.isEmpty
 			clearInputButton.isHidden = !hasInput
 			translateButton.isEnabled = hasInput
+			translateButton.setTitle("Translate into \(pair.destLang)", for: .normal)
 			translateButton.backgroundColor = hasInput ? enabledColor : disabledColor
 
 			if let dest = pair.destText {

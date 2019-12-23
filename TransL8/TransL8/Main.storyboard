@@ -207,7 +207,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mtF-HK-T7N">
-                                        <rect key="frame" x="36" y="138" width="10" height="8"/>
+                                        <rect key="frame" x="17" y="155" width="10" height="8"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="nr7-SK-SA3"/>
                                             <constraint firstAttribute="width" constant="10" id="yL6-bt-2lZ"/>
@@ -220,14 +220,14 @@
                                     <constraint firstItem="Gky-Tp-dqv" firstAttribute="leading" secondItem="Rcn-la-bUB" secondAttribute="leading" id="4cE-Df-DRa"/>
                                     <constraint firstItem="1tN-dz-M8W" firstAttribute="top" secondItem="Rcn-la-bUB" secondAttribute="top" id="5AR-Sl-Iov"/>
                                     <constraint firstAttribute="trailing" secondItem="Gky-Tp-dqv" secondAttribute="trailing" id="6Ej-Na-Eof"/>
-                                    <constraint firstItem="mtF-HK-T7N" firstAttribute="centerY" secondItem="dR4-y2-sZd" secondAttribute="centerY" id="79m-9x-M8b"/>
                                     <constraint firstAttribute="bottom" secondItem="dR4-y2-sZd" secondAttribute="bottom" id="7Yx-o1-sRz"/>
-                                    <constraint firstItem="mtF-HK-T7N" firstAttribute="leading" secondItem="dR4-y2-sZd" secondAttribute="trailing" constant="-8" id="HRR-im-y7Q"/>
+                                    <constraint firstItem="mtF-HK-T7N" firstAttribute="top" secondItem="dR4-y2-sZd" secondAttribute="bottom" constant="-10" id="IRQ-Yr-Yxg"/>
                                     <constraint firstItem="1tN-dz-M8W" firstAttribute="leading" secondItem="Rcn-la-bUB" secondAttribute="leading" id="Jsx-ek-VTh"/>
                                     <constraint firstAttribute="trailing" secondItem="dR4-y2-sZd" secondAttribute="trailing" id="Nyg-KD-xdc"/>
                                     <constraint firstItem="dR4-y2-sZd" firstAttribute="top" secondItem="Gky-Tp-dqv" secondAttribute="bottom" constant="16" id="TgI-OU-C61"/>
                                     <constraint firstItem="Gky-Tp-dqv" firstAttribute="top" secondItem="1tN-dz-M8W" secondAttribute="bottom" constant="16" id="boZ-Oo-bGJ"/>
                                     <constraint firstItem="dR4-y2-sZd" firstAttribute="leading" secondItem="Rcn-la-bUB" secondAttribute="leading" id="i4a-Ns-DXH"/>
+                                    <constraint firstItem="mtF-HK-T7N" firstAttribute="centerX" secondItem="dR4-y2-sZd" secondAttribute="centerX" id="imk-5O-wm1"/>
                                     <constraint firstAttribute="trailing" secondItem="1tN-dz-M8W" secondAttribute="trailing" id="tR0-NT-WEa"/>
                                 </constraints>
                             </view>
@@ -315,7 +315,7 @@
                                     <constraint firstItem="1vl-4T-Sfe" firstAttribute="top" secondItem="LcO-Og-1fm" secondAttribute="bottom" constant="16" id="vVU-b2-PcI"/>
                                 </constraints>
                             </view>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKR-cg-vbf">
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKR-cg-vbf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lgt-3K-Cdk">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
