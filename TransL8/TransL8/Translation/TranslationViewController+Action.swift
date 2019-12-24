@@ -50,7 +50,7 @@ extension TranslateViewController {
 
 			switch result {
 			case .success(let destPair):
-				self.pair = destPair				
+				self.pair = destPair
 				if let text = destPair.destText, !text.isEmpty {
 					UIPasteboard.general.string = text
 					Root.shared.showBanner(message: "Copied: \(text)")

@@ -12,14 +12,10 @@ import MobileCoreServices
 class ActionViewController: UIViewController {
 	
 	@IBOutlet weak var cancelButton: UIBarButtonItem!
-	@IBOutlet weak var okButton: UIBarButtonItem!
-	@IBOutlet weak var textInputView: UITextView!
 	@IBOutlet weak var translateButton: UIButton!
-	@IBOutlet weak var textOutputView: UITextView!
+	@IBOutlet weak var textInputView: UITextView!
+	@IBOutlet weak var infoLabel: UILabel!
 	@IBOutlet weak var busyView: UIVisualEffectView!
-
-	lazy var enabledColor = UIView().tintColor
-	lazy var disabledColor = UIColor.lightGray.withAlphaComponent(0.2)
 
 	let engine = TranslationEngine()
 
@@ -30,17 +26,8 @@ class ActionViewController: UIViewController {
 				textInputView.text = source
 			}
 			let hasInput = !pair.sourceText.isEmpty
+			translateButton.setTitle("→ \(pair.destLang)", for: .normal)
 			translateButton.isEnabled = hasInput
-			translateButton.setTitle("Translate into \(pair.destLang)", for: .normal)
-			translateButton.backgroundColor = hasInput ? enabledColor : disabledColor
-
-			if let dest = pair.destText {
-				if textOutputView.text != dest {
-					textOutputView.text = dest
-				}
-				let hasOutput = !dest.isEmpty
-				okButton.isEnabled = hasOutput
-			}
 		}
 	}
 
@@ -52,42 +39,45 @@ class ActionViewController: UIViewController {
 		}
 	}
 
-	@IBAction func translate() {
-		guard !pair.sourceText.isEmpty else { return }
-		
-		view.endEditing(true)
-		pair = pair.with(destText: "")
-		busyView.isHidden = false
-		engine.translate(pair) { [weak self] result in
-			guard let self = self else { return }
-			self.busyView.isHidden = true
-
-			switch result {
-			case .success(let destPair):
-				self.pair = destPair
-			case .failure(let error):
-				switch error {
-				case .empty:
-					print("No translation found")
-				case .network(let message):
-					print(message)
-				}
-			}
-		}
-	}
-
-	@IBAction func tapBackground(_ sender: UITapGestureRecognizer) {
-		view.endEditing(true)
-	}
-
 	@IBAction func cancel() {
 		extensionContext!.completeRequest(returningItems: nil, completionHandler: nil)
 	}
 	
-	@IBAction func save() {
-		let provider = NSItemProvider(item: pair.destText as NSSecureCoding?, typeIdentifier: kUTTypeText as String)
-		let item = NSExtensionItem()
-		item.attachments = [provider]
-		extensionContext!.completeRequest(returningItems: [item], completionHandler: nil)
+	@IBAction func translate() {
+		guard !pair.sourceText.isEmpty else { return }
+		
+		view.endEditing(true)
+		infoLabel.text = ""
+		pair = pair.with(destText: "")
+		busyView.isHidden = false
+		engine.translate(pair) { [weak self] result in
+			guard let self = self else { return }
+
+			switch result {
+			case .success(let destPair):
+				self.pair = destPair
+				if let text = destPair.destText, !text.isEmpty {
+					UIPasteboard.general.string = text
+					self.infoLabel.text = "Copied: \(text)"
+					DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) { [weak self] in
+						guard let self = self else { return }
+
+						let provider = NSItemProvider(item: self.pair.destText as NSSecureCoding?, typeIdentifier: kUTTypeText as String)
+						let item = NSExtensionItem()
+						item.attachments = [provider]
+						self.extensionContext!.completeRequest(returningItems: [item], completionHandler: nil)
+					}
+				}
+
+			case .failure(let error):
+				switch error {
+				case .empty:
+					self.infoLabel.text = "No translation found"
+				case .network(let message):
+					self.infoLabel.text = message
+				}
+				self.busyView.isHidden = true
+			}
+		}
 	}
 }
