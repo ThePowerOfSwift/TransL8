@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct TextPair: Codable, Equatable {
+struct TextPair: Codable, Equatable, Hashable {
 
 	let sourceText: String
 	let sourceLang: String?

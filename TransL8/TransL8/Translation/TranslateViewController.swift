@@ -15,19 +15,17 @@ import Speech
 class TranslateViewController: UIViewController {
 	
 	@IBOutlet weak var textInputView: UITextView!
-	@IBOutlet weak var clipboardInputButton: UIButton!
-	@IBOutlet weak var clipboardTriangleView: UIImageView!
 	@IBOutlet weak var cameraInputButton: UIButton!
 	@IBOutlet weak var micInputButton: UIButton!
 	@IBOutlet weak var micOverlay: UIVisualEffectView!
 	@IBOutlet weak var micPreviewLabel: UILabel!
 	@IBOutlet weak var micStopButton: UIButton!
 	@IBOutlet weak var clearInputButton: UIButton!
+	@IBOutlet weak var clipboardButton: UIBarButtonItem!
 	
 	@IBOutlet weak var translateButton: UIButton!
 	
 	@IBOutlet weak var textOutputView: UITextView!
-	@IBOutlet weak var clipboardOutputButton: UIButton!
 	@IBOutlet weak var shareOutputButton: UIButton!
 	@IBOutlet weak var speakOutputButton: UIButton!
 	
@@ -55,7 +53,7 @@ class TranslateViewController: UIViewController {
 			let hasInput = !pair.sourceText.isEmpty
 			clearInputButton.isHidden = !hasInput
 			translateButton.isEnabled = hasInput
-			translateButton.setTitle("Translate into \(pair.destLang)", for: .normal)
+			translateButton.setTitle("→ \(pair.destLang)", for: .normal)
 			translateButton.backgroundColor = hasInput ? enabledColor : disabledColor
 
 			if let dest = pair.destText {
@@ -63,18 +61,14 @@ class TranslateViewController: UIViewController {
 					textOutputView.text = dest
 				}
 				let hasOutput = !dest.isEmpty
-				clipboardOutputButton.isEnabled = hasOutput
 				shareOutputButton.isEnabled = hasOutput
 				speakOutputButton.isEnabled = hasOutput
-				clipboardOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
 				shareOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
 				speakOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
 			}
 			
 			let hasClips = !PreferencesController.shared.pairCache.isEmpty
-			clipboardInputButton.isEnabled = hasClips
-			clipboardInputButton.tintColor = hasClips ? enabledColor : disabledColor
-			clipboardTriangleView.isHidden = !hasClips
+			clipboardButton.isEnabled = hasClips
 		}
 	}
 
@@ -83,14 +77,10 @@ class TranslateViewController: UIViewController {
 		
 		setupRecord()
 		setupScan()
-		setupClipboard()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-
-		// preferences could have changed lang
-		pair = pair.with(destLang: PreferencesController.shared.lang)
 
 		if pair.sourceText.isEmpty {
 			if let text = UIPasteboard.general.string, !text.isEmpty {
@@ -101,7 +91,19 @@ class TranslateViewController: UIViewController {
 			}
 		}
 	}
-	
+
+	@IBAction func unwindFromPreferences(unwindSegue: UIStoryboardSegue) {
+		// preferences could have changed lang
+		pair = pair.with(destLang: PreferencesController.shared.lang)
+	}
+
+	@IBAction func unwindFromClipboard(unwindSegue: UIStoryboardSegue) {
+		guard let vc = unwindSegue.source as? HistoryViewController, let selectedPair = vc.selectedPair else {
+			return
+		}
+		pair = selectedPair
+	}
+
 	@IBAction func tapBackground(_ sender: UITapGestureRecognizer) {
 		view.endEditing(true)
 	}

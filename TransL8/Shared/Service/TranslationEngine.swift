@@ -34,14 +34,7 @@ class TranslationEngine {
 						let sourceLang = resultContainer.translations.first!.detectedSourceLanguage
 						let pair = TextPair(sourceText: sourcePair.sourceText, sourceLang: sourceLang, destText: destText, destLang: sourcePair.destLang)
 						
-						// store limited number of pairs into "cache"
-						var list = PreferencesController.shared.pairCache
-						list.insert(pair, at: 0)
-						let over = list.count - 100
-						if over > 0 {
-							_ = list.dropLast(over)
-						}
-						PreferencesController.shared.pairCache = list
+						PreferencesController.shared.cache(pair)
 
 						completion(.success(pair))
 					}

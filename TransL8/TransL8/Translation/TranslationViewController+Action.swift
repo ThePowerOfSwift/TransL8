@@ -23,13 +23,6 @@ extension TranslateViewController {
 		self.textInputView.becomeFirstResponder()
 	}
 
-	@IBAction func copyOutput() {
-		guard let text = pair.destText, !text.isEmpty else { return }
-		
-		UIPasteboard.general.string = text
-		Root.shared.showBanner(message: "Copy: \(text)")
-	}
-
 	@IBAction func shareOutput() {
 		guard let text = pair.destText, !text.isEmpty else { return }
 
@@ -57,7 +50,12 @@ extension TranslateViewController {
 
 			switch result {
 			case .success(let destPair):
-				self.pair = destPair
+				self.pair = destPair				
+				if let text = destPair.destText, !text.isEmpty {
+					UIPasteboard.general.string = text
+					Root.shared.showBanner(message: "Copied: \(text)")
+				}
+
 			case .failure(let error):
 				switch error {
 				case .empty:

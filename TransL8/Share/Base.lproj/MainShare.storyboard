@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Yl-lq-gbz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Share View Controller-->
+        <scene sceneID="UnN-zA-GKK">
+            <objects>
+                <viewController id="4Yl-lq-gbz" customClass="ShareViewController" customModule="Share" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zI1-CS-gui">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZc-4W-bnc">
+                                <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="cancel" id="vyp-y5-1NS">
+                                        <connections>
+                                            <action selector="cancel" destination="4Yl-lq-gbz" id="Szu-cf-6KF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="n3y-E7-6Mj"/>
+                                    <barButtonItem systemItem="save" id="9hD-1k-Ybr">
+                                        <connections>
+                                            <action selector="save" destination="4Yl-lq-gbz" id="JAf-4M-LhD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wW1-qY-rcf">
+                                <rect key="frame" x="0.0" y="88" width="320" height="440"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p3A-Sm-kmz">
+                                        <rect key="frame" x="16" y="16" width="288" height="173"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4h-WV-dnz">
+                                        <rect key="frame" x="8" y="197" width="304" height="46"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Translate">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="translate" destination="4Yl-lq-gbz" eventType="touchUpInside" id="5rv-Nk-3P8"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hjt-5a-f2c">
+                                        <rect key="frame" x="16" y="251" width="288" height="173"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="b4h-WV-dnz" secondAttribute="trailing" constant="8" id="3pV-rC-yI0"/>
+                                    <constraint firstItem="p3A-Sm-kmz" firstAttribute="top" secondItem="wW1-qY-rcf" secondAttribute="top" constant="16" id="B59-g4-34R"/>
+                                    <constraint firstItem="hjt-5a-f2c" firstAttribute="leading" secondItem="wW1-qY-rcf" secondAttribute="leading" constant="16" id="DCn-7k-8cW"/>
+                                    <constraint firstAttribute="bottom" secondItem="hjt-5a-f2c" secondAttribute="bottom" constant="16" id="DNq-ZX-kcm"/>
+                                    <constraint firstItem="b4h-WV-dnz" firstAttribute="top" secondItem="p3A-Sm-kmz" secondAttribute="bottom" constant="8" id="EL4-fW-xQQ"/>
+                                    <constraint firstItem="b4h-WV-dnz" firstAttribute="centerY" secondItem="wW1-qY-rcf" secondAttribute="centerY" id="JAv-MN-qZu"/>
+                                    <constraint firstItem="hjt-5a-f2c" firstAttribute="top" secondItem="b4h-WV-dnz" secondAttribute="bottom" constant="8" id="aLj-3r-R8c"/>
+                                    <constraint firstItem="p3A-Sm-kmz" firstAttribute="leading" secondItem="wW1-qY-rcf" secondAttribute="leading" constant="16" id="m1T-x0-pG4"/>
+                                    <constraint firstAttribute="trailing" secondItem="p3A-Sm-kmz" secondAttribute="trailing" constant="16" id="tLd-Lp-zJg"/>
+                                    <constraint firstAttribute="trailing" secondItem="hjt-5a-f2c" secondAttribute="trailing" constant="16" id="x4h-A6-kSk"/>
+                                    <constraint firstItem="b4h-WV-dnz" firstAttribute="leading" secondItem="wW1-qY-rcf" secondAttribute="leading" constant="8" id="xRJ-Wx-hzl"/>
+                                </constraints>
+                            </view>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PvX-Bz-hCg">
+                                <rect key="frame" x="0.0" y="88" width="320" height="440"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xRt-rZ-gGx">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3kU-97-rMF">
+                                            <rect key="frame" x="150" y="210" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3kU-97-rMF" firstAttribute="centerX" secondItem="xRt-rZ-gGx" secondAttribute="centerX" id="U0g-bq-tqp"/>
+                                        <constraint firstItem="3kU-97-rMF" firstAttribute="centerY" secondItem="xRt-rZ-gGx" secondAttribute="centerY" id="iE7-Ic-utf"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wW1-qY-rcf" firstAttribute="leading" secondItem="YWY-g4-vLa" secondAttribute="leading" id="6zl-ao-2CJ"/>
+                            <constraint firstItem="fZc-4W-bnc" firstAttribute="top" secondItem="YWY-g4-vLa" secondAttribute="top" id="G6q-TX-Jnh"/>
+                            <constraint firstItem="YWY-g4-vLa" firstAttribute="trailing" secondItem="wW1-qY-rcf" secondAttribute="trailing" id="H0c-Sg-Dvg"/>
+                            <constraint firstItem="PvX-Bz-hCg" firstAttribute="bottom" secondItem="zI1-CS-gui" secondAttribute="bottom" id="HyD-tS-h2a"/>
+                            <constraint firstItem="wW1-qY-rcf" firstAttribute="top" secondItem="fZc-4W-bnc" secondAttribute="bottom" id="IfU-qU-YrO"/>
+                            <constraint firstItem="YWY-g4-vLa" firstAttribute="bottom" secondItem="wW1-qY-rcf" secondAttribute="bottom" id="XOe-cJ-ddT"/>
+                            <constraint firstItem="PvX-Bz-hCg" firstAttribute="leading" secondItem="wW1-qY-rcf" secondAttribute="leading" id="b8T-OM-7Wy"/>
+                            <constraint firstAttribute="trailing" secondItem="fZc-4W-bnc" secondAttribute="trailing" id="lRp-xC-PzX"/>
+                            <constraint firstItem="PvX-Bz-hCg" firstAttribute="top" secondItem="wW1-qY-rcf" secondAttribute="top" id="ppP-PJ-pWs"/>
+                            <constraint firstItem="fZc-4W-bnc" firstAttribute="leading" secondItem="zI1-CS-gui" secondAttribute="leading" id="xXG-oO-lxE"/>
+                            <constraint firstItem="PvX-Bz-hCg" firstAttribute="trailing" secondItem="wW1-qY-rcf" secondAttribute="trailing" id="yNb-Dm-3f0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YWY-g4-vLa"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Rv0-of-62d" appends="YES" id="xg8-Vo-nUN"/>
+                        </connections>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="busyView" destination="PvX-Bz-hCg" id="2jn-2k-nFd"/>
+                        <outlet property="cancelButton" destination="vyp-y5-1NS" id="FQF-Ox-Ibw"/>
+                        <outlet property="okButton" destination="9hD-1k-Ybr" id="bWY-3V-WoS"/>
+                        <outlet property="textInputView" destination="p3A-Sm-kmz" id="rFh-ek-lGF"/>
+                        <outlet property="textOutputView" destination="hjt-5a-f2c" id="5hg-Nn-PcF"/>
+                        <outlet property="translateButton" destination="b4h-WV-dnz" id="S3I-3I-2TR"/>
+                        <outlet property="view" destination="zI1-CS-gui" id="hzk-56-UGd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fLm-sJ-eu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Rv0-of-62d">
+                    <connections>
+                        <action selector="tapBackground:" destination="4Yl-lq-gbz" id="RUi-VW-cAB"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+</document>

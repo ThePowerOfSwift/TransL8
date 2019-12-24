@@ -14,6 +14,7 @@ class PreferencesViewController: UIViewController, UITextFieldDelegate {
   
 	@IBOutlet weak var languageSwitch: UISegmentedControl!
 	@IBOutlet weak var apiKeyView: UITextField!
+	@IBOutlet weak var updateButton: UIButton!
 	@IBOutlet weak var statusLabel: UILabel!
 	
   let service = MoyaProvider<DeepLService>()
@@ -38,6 +39,22 @@ class PreferencesViewController: UIViewController, UITextFieldDelegate {
 		statusLabel.text = ""
 	}
 
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		update()
+	}
+
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		
+		view.endEditing(true)
+		guard let lang = lang, let apiKey = apiKey else { return }
+
+		PreferencesController.shared.lang = lang
+		PreferencesController.shared.apiKey = apiKey
+	}
+
 	@IBAction func changeLang() {
 		view.endEditing(true)
 		lang = PreferencesController.languages[languageSwitch.selectedSegmentIndex]
@@ -55,12 +72,14 @@ class PreferencesViewController: UIViewController, UITextFieldDelegate {
 	@IBAction func update() {
 		guard let apiKey = apiKey else { return }
 		view.endEditing(true)
-		
-		Root.shared.isBusy = true
+
+		apiKeyView.isEnabled = false
+		updateButton.isEnabled = false
 		service.request(.retrieveUsage(apiKey: apiKey)) { [weak self] result in
       guard let self = self else { return }
-      
-			Root.shared.isBusy = false
+			self.apiKeyView.isEnabled = true
+			self.updateButton.isEnabled = true
+
 			switch result {
 			case .success(let response):
 				if let usage = try? response.data.decoded() as DeepL.Usage {
@@ -73,14 +92,5 @@ class PreferencesViewController: UIViewController, UITextFieldDelegate {
 				self.statusLabel.text = String(format: "Network error: '%@'", error.localizedDescription)
 			}
 		}
-	}
-
-	@IBAction func save(_ sender: UIBarButtonItem) {
-		view.endEditing(true)
-		guard let lang = lang, let apiKey = apiKey else { return }
-
-		PreferencesController.shared.lang = lang
-		PreferencesController.shared.apiKey = apiKey
-		self.navigationController?.popViewController(animated: true)
 	}
 }

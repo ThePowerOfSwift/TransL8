@@ -5,11 +5,14 @@ pod 'KeychainSwift'
 target 'TransL8' do
 	platform :ios, '13.2'
   use_frameworks!
-
 end
 
 target 'Action' do
 	platform :ios, '13.2'
   use_frameworks!
+end
 
+target 'Share' do
+	platform :ios, '13.2'
+  use_frameworks!
 end
