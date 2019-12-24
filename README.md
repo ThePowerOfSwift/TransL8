@@ -20,7 +20,7 @@ Apart from the core translation, I want to explore a deep system integration:
 
 - Keyboard extension (nope, see below)
 - Action extension (done, basically mimics the translation interface and serves the result back)
-- Share extension (open)
+- Share extension (done, direct and fast flow)
 - Widget (open)
 - Siri intents (open)
 - serve clipboard history as a Document provider extension (open)
@@ -46,17 +46,17 @@ Sad but true, no Keyboard extension...
 
 As per definition, [Actions should transform/convert the given content](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Action.html) - which makes perfect sense for a translator. So a meaningful user flow is to translate a given text and serve the result back - which is what the `TransL8 in Action` extension does.
 
-Surprisingly sending back the result is ignored by most originating apps although the iOS SDK has a callback for this (`completionWithItemsHandler` on `UIActivityViewController`). As a first tweak TransL8 will copy the translation to the system clipboard automatically and second it extends its clipboard feature to a history of translations (to be reviewed later at any time).
+Surprisingly sending back the result is ignored by most originating apps although the iOS SDK has a callback for this (`completionWithItemsHandler` on `UIActivityViewController`). As a first tweak TransL8 will copy the translation to the system clipboard automatically and second it extends its internal clipboard feature to a history of translations (to be reviewed later at any time).
 
 This extension was fun is is probably the most meaningful extension for a translator.
 
 ## Share Extension
 
-Although sharing is more considered of a one-way flow to [send content to other services](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html) and hence the flow and intention is very different compraed an Action Extension, both extension share the same API! So we could reuse exactly the same UI and UX - but that would be a poor design choice.
+Although sharing is more considered of a one-way flow to [send content to other services](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html) and hence the flow and intention is very different compraed an Action Extension, both extension share the same API! So one *could* reuse exactly the same UI and UX - but that would be a poor design choice.
 
-Given the default `SLComposeServiceViewController` design and sharing being considered a fast, one-directional path, TransL8 will use the Share Extension as a means to populate the clipboard history with the input text - but will not translate it directly.
+Given the default `SLComposeServiceViewController` design and sharing being considered a fast, one-directional path, TransL8 will use the Share Extension as a means to be the fastest tranlation roundtrip: it first translates the input text, second it stores this pair to its internal clipboard history and lastly copies it to the clipboard.
 
-Admittedly this conservative feature is driven by the paid service we're using and may change later (with an `auto-translate` preference switch)
+Took quite some consideration to streamline the flow this far but I think it's worth it.
 
 # Contact
 

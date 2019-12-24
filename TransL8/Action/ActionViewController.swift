@@ -59,7 +59,7 @@ class ActionViewController: UIViewController {
 				if let text = destPair.destText, !text.isEmpty {
 					UIPasteboard.general.string = text
 					self.infoLabel.text = "Copied: \(text)"
-					DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) { [weak self] in
+					DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) { [weak self] in
 						guard let self = self else { return }
 
 						let provider = NSItemProvider(item: self.pair.destText as NSSecureCoding?, typeIdentifier: kUTTypeText as String)
