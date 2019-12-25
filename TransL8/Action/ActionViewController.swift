@@ -26,7 +26,7 @@ class ActionViewController: UIViewController {
 				textInputView.text = source
 			}
 			let hasInput = !pair.sourceText.isEmpty
-			translateButton.setTitle("→ \(pair.destLang)", for: .normal)
+			translateButton.setTitle(pair.destLang, for: .normal)
 			translateButton.isEnabled = hasInput
 		}
 	}
