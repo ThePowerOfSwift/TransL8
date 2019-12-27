@@ -19,22 +19,32 @@ You need Xcode 11 and iOS 13 to build and run this app. Furthermore a paid [Deep
 Apart from the core translation, I want to explore a deep system integration:
 
 - Keyboard extension (nope, see below)
-- Action extension (done, basically mimics the translation interface and serves the result back)
+- Action extension (done, simplified translation interface)
 - Share extension (done, direct and fast flow)
-- Widget (open)
+- Today Extension/Widget (unsure)
+- serve as a Document provider extension (open)
 - Siri intents (open)
-- serve clipboard history as a Document provider extension (open)
 - x-url-mechanics (open)
 - drag&drop support on iPads (open)
 - Catalyst support (open)
 
-# Logfile
+## General client server observations
+
+Thanks to [Moya](https://github.com/Moya/Moya) most REST APIs are simple to use nowadays. The only stumbling block for a mobile client is authentication (and pricing for the service). So let's discuss pricing first:
+
+- this project is mostly for fun, but putting it into the store with my API key hardcoded would put my pockets under pressure. Having no idea about the success of the app on the long run an upfront price would not work as well. So as a first step I hand over the pricing to the user by letting them create a DeepL Pro account and let the user enter *their* API key. Maybe I experiment with consumables or a subscription but that distracts me too much from the core product...
+
+- sadly DeepL has no oauth, so the UX for the user is as ugly as manually copying the API key into the app (sorry). There is a onboarding feature in TransL8 to login and help grabbing the API key but I wish it would not be needed.
+
+## new SDKs
+
+For quite some time, Apple is extending Foundation and UIKit with powerful siblings for which AR and ML are only two fancy packages: with (VisionKit)[https://developer.apple.com/documentation/visionkit] you can take photos and OCR the text inside for free - no need to integrate Tesseract or integrate other proprietary verndors SDKs anymore! And with [Speech](https://developer.apple.com/documentation/speech) you can transcribe spoken words into text - complete speech-to-text for free!
 
 ## Keyboard Extension
 
-Providing a [novel text input](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html) in the context of a translator seems natural at first but does not easily apply to a "tranlation service" where there is a `source text -> translate -> destination text` flow. But what about a simple "Translate" button for converting the "current text"?
+Providing a [novel text input](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html) in the context of a translator seems natural at first but does not easily apply to a "tranlation service" where there is a `source -> translate -> destination` flow. But what about a simple "Translate" button for converting the "current text"?
 
-Sadly the available API is severely limited and broken (as of iOS 13.2, look into the `feature/keyboard-extension` branch): with the `UITextDocumentProxy` you can access the "current text" in two ways:
+Sadly the available API for keyboard extensions is severely limited and broken (as of iOS 13.2, look into the `feature/keyboard-extension` branch): with the `UITextDocumentProxy` you can access the "current text" in two ways:
 
 - by means of the before/after strings around the cursor, but that is limited to the current paragraph only. Furthermore changing the text with that approach leads to multiple weird calls to let UIKit update the text view in between.
 
@@ -57,6 +67,20 @@ Although sharing is more considered of a one-way flow to [send content to other 
 Given the default `SLComposeServiceViewController` design and sharing being considered a fast, one-directional path, TransL8 will use the Share Extension as a means to be the fastest tranlation roundtrip: it first translates the input text, second it stores this pair to its internal clipboard history and lastly copies it to the clipboard.
 
 Took quite some consideration to streamline the flow this far but I think it's worth it.
+
+## Today Extension/Widget
+
+Given the API limitations I can hardly imagine any useful feature set for a TransL8 widget. It could serve as a fast entry point into the app (was originally forbidden but is commonly used nowadays), offer single line translations (not sure about wether it can accept keyboard input) or access to the clipboard history - not convincing. Then I though about camera or voice translation but even Shazam is deep linking into the main app to do so - API limitations fight back hard! I guess I'll drop it for now...
+
+## Document Provider Extension
+
+There could be some value in offering translations as texts to other apps - up to 100 translations are stored in the app history already. The effort would be:
+
+- implement the `Document Picker` is easy as this resembles the `HistoryViewController`
+
+- implement the `File Provider` to actually copy files around
+
+Let's see...
 
 # Contact
 
