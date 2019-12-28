@@ -16,3 +16,8 @@ target 'Share' do
 	platform :ios, '13.2'
   use_frameworks!
 end
+
+target 'File' do
+	platform :ios, '13.2'
+  use_frameworks!
+end

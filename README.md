@@ -72,15 +72,21 @@ Took quite some consideration to streamline the flow this far but I think it's w
 
 Given the API limitations I can hardly imagine any useful feature set for a TransL8 widget. It could serve as a fast entry point into the app (was originally forbidden but is commonly used nowadays), offer single line translations (not sure about wether it can accept keyboard input) or access to the clipboard history - not convincing. Then I though about camera or voice translation but even Shazam is deep linking into the main app to do so - API limitations fight back hard! I guess I'll drop it for now...
 
-## Document Provider Extension
+## File Provider Extension
 
-There could be some value in offering translations as texts to other apps - up to 100 translations are stored in the app history already. The effort would be:
+There could be some value in offering translations as texts to other apps - up to 100 translations are stored in the app history already, why not open them up for easier text import. This extension creates ad-hoc files if the `UIDocumentBrowser` requests it. At the moment any changes to these files are ignored. The content is provided by means of a formatted text with the source (language and text) first and destination (lang and text) last.
 
-- implement the `Document Picker` is easy as this resembles the `HistoryViewController`
+Implementation is straight forward once you understand the connected parts. The simplicity mostly derived from using standard `FileProvider` components, a non-network-based approach, supporting simple read operation only and good [sample code](https://www.raywenderlich.com/697468-ios-file-provider-extension-tutorial)!
 
-- implement the `File Provider` to actually copy files around
+As a developer I could go further:
 
-Let's see...
+- adding [context menu actions](https://developer.apple.com/documentation/fileproviderUI) to the given file icons
+
+- a custom [Document Picker View Controller](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/FileProvider.html) which in the context of TransL8 could very much use the given `Clipboard History` view controller
+
+- put these text files into iCloud via `UIDocument` suport
+
+While tinkering with this extension, I thought it might be interesting to open up documents as another input method within TransL8... let's see
 
 # Contact
 
