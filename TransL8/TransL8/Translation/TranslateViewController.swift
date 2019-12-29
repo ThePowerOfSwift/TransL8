@@ -15,6 +15,7 @@ import Speech
 class TranslateViewController: UIViewController {
 	
 	@IBOutlet weak var textInputView: UITextView!
+	@IBOutlet weak var documentInputButton: UIButton!
 	@IBOutlet weak var cameraInputButton: UIButton!
 	@IBOutlet weak var micInputButton: UIButton!
 	@IBOutlet weak var micOverlay: UIVisualEffectView!
@@ -97,7 +98,7 @@ class TranslateViewController: UIViewController {
 		pair = pair.with(destLang: PreferencesController.shared.lang)
 	}
 
-	@IBAction func unwindFromClipboard(unwindSegue: UIStoryboardSegue) {
+	@objc func unwindFromClipboard(unwindSegue: UIStoryboardSegue) {
 		guard let vc = unwindSegue.source as? HistoryViewController, let selectedPair = vc.selectedPair else {
 			return
 		}
