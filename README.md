@@ -21,11 +21,12 @@ Apart from the core translation, I want to explore a deep system integration:
 - Keyboard extension (nope, see below)
 - Action extension (done, simplified translation interface)
 - Share extension (done, direct and fast flow)
-- Today Extension/Widget (unsure)
-- serve as a Document provider extension (open)
+- Today Extension/Widget (nope)
+- serve as a Document provider extension (done)
+- open via DocumentPicker (done)
+- drag&drop support on iPads (open)
 - Siri intents (open)
 - x-url-mechanics (open)
-- drag&drop support on iPads (open)
 - Catalyst support (open)
 
 ## General client server observations
@@ -86,7 +87,7 @@ As a developer I could go further:
 
 - put these text files into iCloud via `UIDocument` suport
 
-While tinkering with this extension, I thought it might be interesting to open up documents as another input method within TransL8... let's see
+After exporting the translations, there should be in import into TransL8 as well: the `UIDocumentPickerViewController` is dead simple to use and serves the selected file by means of a delegate call - which then imports the data back into the source text view.
 
 # Contact
 
