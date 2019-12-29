@@ -18,9 +18,6 @@ class TranslateViewController: UIViewController {
 	@IBOutlet weak var documentInputButton: UIButton!
 	@IBOutlet weak var cameraInputButton: UIButton!
 	@IBOutlet weak var micInputButton: UIButton!
-	@IBOutlet weak var micOverlay: UIVisualEffectView!
-	@IBOutlet weak var micPreviewLabel: UILabel!
-	@IBOutlet weak var micStopButton: UIButton!
 	@IBOutlet weak var clearInputButton: UIButton!
 	@IBOutlet weak var clipboardButton: UIBarButtonItem!
 	
@@ -33,10 +30,7 @@ class TranslateViewController: UIViewController {
 	let engine = TranslationEngine()
 	let synthesizer = AVSpeechSynthesizer()
 
-	let record = SFSpeechRecognizer()
-	let recordEngine = AVAudioEngine()
-	var recordRequest = SFSpeechAudioBufferRecognitionRequest()
-	var recordTask: SFSpeechRecognitionTask?
+	private lazy var record = SFSpeechRecognizer()
 
 	var scanRequests = [VNRequest]()
 	let scanQueue = DispatchQueue(label: "ScanQueue", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
@@ -57,6 +51,9 @@ class TranslateViewController: UIViewController {
 			translateButton.setTitle(pair.destLang, for: .normal)
 			translateButton.backgroundColor = hasInput ? enabledColor : disabledColor
 
+			micInputButton.isEnabled = record?.isAvailable ?? false
+			micInputButton.tintColor = micInputButton.isEnabled ? enabledColor : disabledColor
+
 			if let dest = pair.destText {
 				if textOutputView.text != dest {
 					textOutputView.text = dest
@@ -76,7 +73,6 @@ class TranslateViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		setupRecord()
 		setupScan()
 	}
 
@@ -93,16 +89,14 @@ class TranslateViewController: UIViewController {
 		}
 	}
 
-	@IBAction func unwindFromPreferences(unwindSegue: UIStoryboardSegue) {
-		// preferences could have changed lang
-		pair = pair.with(destLang: PreferencesController.shared.lang)
-	}
-
-	@objc func unwindFromClipboard(unwindSegue: UIStoryboardSegue) {
-		guard let vc = unwindSegue.source as? HistoryViewController, let selectedPair = vc.selectedPair else {
-			return
+	@IBAction func unwind(unwindSegue: UIStoryboardSegue) {
+		if let vc = unwindSegue.source as? TextPairSelectable, let selectedPair = vc.selectedPair {
+			pair = selectedPair
 		}
-		pair = selectedPair
+		
+		if unwindSegue.source is PreferencesViewController {
+			pair = pair.with(destLang: PreferencesController.shared.lang)
+		}
 	}
 
 	@IBAction func tapBackground(_ sender: UITapGestureRecognizer) {

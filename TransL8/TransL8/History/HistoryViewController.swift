@@ -9,10 +9,11 @@
 import UIKit
 
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: UIViewController, TextPairSelectable {
 	
 	@IBOutlet weak var listView: UITableView!
-	var dataSource: TextPairDataSource?
+	private var dataSource: TextPairDataSource?
+
 	var selectedPair: TextPair?
 	
 	override func viewDidLoad() {
@@ -39,7 +40,7 @@ extension HistoryViewController: UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		selectedPair = PreferencesController.shared.pairCache[indexPath.item]
-		performSegue(withIdentifier: "unwindFromClipboard", sender: self)
+		performSegue(withIdentifier: "unwind", sender: self)
 	}
 }
 

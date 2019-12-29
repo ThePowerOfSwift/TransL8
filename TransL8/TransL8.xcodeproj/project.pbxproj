@@ -18,6 +18,8 @@
 		DE0DBE4D23AE5CCD005E2570 /* OnboardingIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE4C23AE5CCC005E2570 /* OnboardingIntroViewController.swift */; };
 		DE0DBE4F23AE6740005E2570 /* UIViewController+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE4E23AE6740005E2570 /* UIViewController+Embed.swift */; };
 		DE42841823B8F23100D7013D /* TranslateViewController+Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42841723B8F23100D7013D /* TranslateViewController+Document.swift */; };
+		DE42841B23B8F6D800D7013D /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42841A23B8F6D800D7013D /* RecordViewController.swift */; };
+		DE42841D23B8FB8C00D7013D /* TextPairSelectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42841C23B8FB8C00D7013D /* TextPairSelectable.swift */; };
 		DE46DDE223B2401800056919 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46DDE123B2401800056919 /* HistoryViewController.swift */; };
 		DE46DDE423B2429500056919 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46DDE323B2429500056919 /* HistoryCell.swift */; };
 		DE93D88523AD7DCE00FC9D74 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86923AD7DCE00FC9D74 /* Storage.swift */; };
@@ -27,7 +29,6 @@
 		DE93D88923AD7DCE00FC9D74 /* TranslateViewController+Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86E23AD7DCE00FC9D74 /* TranslateViewController+Scan.swift */; };
 		DE93D88A23AD7DCE00FC9D74 /* TranslationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86F23AD7DCE00FC9D74 /* TranslationEngine.swift */; };
 		DE93D88B23AD7DCE00FC9D74 /* TranslateViewController+Speak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D87023AD7DCE00FC9D74 /* TranslateViewController+Speak.swift */; };
-		DE93D88C23AD7DCE00FC9D74 /* TranslateViewController+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D87123AD7DCE00FC9D74 /* TranslateViewController+Record.swift */; };
 		DE93D88E23AD7DCE00FC9D74 /* TextPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D87323AD7DCE00FC9D74 /* TextPair.swift */; };
 		DE93D88F23AD7DCE00FC9D74 /* TranslateViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D87423AD7DCE00FC9D74 /* TranslateViewController+Action.swift */; };
 		DE93D89023AD7DCE00FC9D74 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D87523AD7DCE00FC9D74 /* TranslateViewController.swift */; };
@@ -147,6 +148,8 @@
 		DE0DBE4C23AE5CCC005E2570 /* OnboardingIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingIntroViewController.swift; sourceTree = "<group>"; };
 		DE0DBE4E23AE6740005E2570 /* UIViewController+Embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Embed.swift"; sourceTree = "<group>"; };
 		DE42841723B8F23100D7013D /* TranslateViewController+Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslateViewController+Document.swift"; sourceTree = "<group>"; };
+		DE42841A23B8F6D800D7013D /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		DE42841C23B8FB8C00D7013D /* TextPairSelectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPairSelectable.swift; sourceTree = "<group>"; };
 		DE46DDE123B2401800056919 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		DE46DDE323B2429500056919 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		DE93D86923AD7DCE00FC9D74 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
@@ -156,7 +159,6 @@
 		DE93D86E23AD7DCE00FC9D74 /* TranslateViewController+Scan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TranslateViewController+Scan.swift"; sourceTree = "<group>"; };
 		DE93D86F23AD7DCE00FC9D74 /* TranslationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationEngine.swift; sourceTree = "<group>"; };
 		DE93D87023AD7DCE00FC9D74 /* TranslateViewController+Speak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TranslateViewController+Speak.swift"; sourceTree = "<group>"; };
-		DE93D87123AD7DCE00FC9D74 /* TranslateViewController+Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TranslateViewController+Record.swift"; sourceTree = "<group>"; };
 		DE93D87323AD7DCE00FC9D74 /* TextPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPair.swift; sourceTree = "<group>"; };
 		DE93D87423AD7DCE00FC9D74 /* TranslateViewController+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TranslateViewController+Action.swift"; sourceTree = "<group>"; };
 		DE93D87523AD7DCE00FC9D74 /* TranslateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +274,14 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		DE42841923B8F58C00D7013D /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				DE42841A23B8F6D800D7013D /* RecordViewController.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
 		DE46DDDE23B23F7500056919 /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +298,7 @@
 				DE93D86823AD7DCE00FC9D74 /* Preferences */,
 				DE93D86D23AD7DCE00FC9D74 /* Translation */,
 				DE46DDDE23B23F7500056919 /* History */,
+				DE42841923B8F58C00D7013D /* Record */,
 				DE93D87B23AD7DCE00FC9D74 /* AppDelegate.swift */,
 				DE93D88423AD7DCE00FC9D74 /* SceneDelegate.swift */,
 				DE93D87623AD7DCE00FC9D74 /* RootViewController.swift */,
@@ -315,8 +326,8 @@
 				DE93D87423AD7DCE00FC9D74 /* TranslateViewController+Action.swift */,
 				DE93D86E23AD7DCE00FC9D74 /* TranslateViewController+Scan.swift */,
 				DE93D87023AD7DCE00FC9D74 /* TranslateViewController+Speak.swift */,
-				DE93D87123AD7DCE00FC9D74 /* TranslateViewController+Record.swift */,
 				DE42841723B8F23100D7013D /* TranslateViewController+Document.swift */,
+				DE42841C23B8FB8C00D7013D /* TextPairSelectable.swift */,
 			);
 			path = Translation;
 			sourceTree = "<group>";
@@ -752,9 +763,9 @@
 				DE42841823B8F23100D7013D /* TranslateViewController+Document.swift in Sources */,
 				DE0DBE4723AE5A44005E2570 /* OnboardingApiKeyViewController.swift in Sources */,
 				DE93D89823AD7DCE00FC9D74 /* Data+JSONDecode.swift in Sources */,
-				DE93D88C23AD7DCE00FC9D74 /* TranslateViewController+Record.swift in Sources */,
 				DE46DDE223B2401800056919 /* HistoryViewController.swift in Sources */,
 				DE93D88823AD7DCE00FC9D74 /* PreferencesController.swift in Sources */,
+				DE42841B23B8F6D800D7013D /* RecordViewController.swift in Sources */,
 				DE0DBE4F23AE6740005E2570 /* UIViewController+Embed.swift in Sources */,
 				DEB8893D23B1143200906681 /* Array+NSExtensionItem.swift in Sources */,
 				DE93D89523AD7DCE00FC9D74 /* AppDelegate.swift in Sources */,
@@ -769,6 +780,7 @@
 				DE93D89A23AD7DCE00FC9D74 /* UIView+Border.swift in Sources */,
 				DE93D89C23AD7DCE00FC9D74 /* SceneDelegate.swift in Sources */,
 				DE46DDE423B2429500056919 /* HistoryCell.swift in Sources */,
+				DE42841D23B8FB8C00D7013D /* TextPairSelectable.swift in Sources */,
 				DE93D88A23AD7DCE00FC9D74 /* TranslationEngine.swift in Sources */,
 				DE93D89623AD7DCE00FC9D74 /* DeepL.swift in Sources */,
 				DE93D88523AD7DCE00FC9D74 /* Storage.swift in Sources */,
@@ -1031,7 +1043,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TransL8/TransL8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = TransL8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -1054,7 +1066,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TransL8/TransL8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = TransL8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

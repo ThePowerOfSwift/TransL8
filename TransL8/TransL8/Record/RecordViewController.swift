@@ -1,8 +1,8 @@
 //
-//  TranslationViewController+Record.swift
+//  RecordViewController.swift
 //  TransL8
 //
-//  Created by Oliver Michalak on 16.12.19.
+//  Created by Oliver Michalak on 29.12.19.
 //  Copyright © 2019 Oliver Michalak. All rights reserved.
 //
 //	derived from: https://developer.apple.com/documentation/speech/recognizing_speech_in_live_audio
@@ -11,17 +11,34 @@ import UIKit
 import Speech
 
 
-extension TranslateViewController {
+class RecordViewController: UIViewController, TextPairSelectable {
 	
-	func setupRecord() {
+	@IBOutlet weak var micOverlay: UIVisualEffectView!
+	@IBOutlet weak var micPreviewLabel: UILabel!
+	@IBOutlet weak var micStopButton: UIButton!
+
+	var selectedPair: TextPair?
+
+	private let record = SFSpeechRecognizer()
+	private let recordEngine = AVAudioEngine()
+	private var recordRequest = SFSpeechAudioBufferRecognitionRequest()
+	private var recordTask: SFSpeechRecognitionTask?
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		micPreviewLabel.text = ""
 		recordRequest.shouldReportPartialResults = true
 		//		recorderRequest.requiresOnDeviceRecognition = true
-		micInputButton.isEnabled = record?.isAvailable ?? false
-		micInputButton.tintColor = micInputButton.isEnabled ? enabledColor : disabledColor
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		startStopRecording()
 	}
 	
-	@IBAction func recordMicInput() {
-		view.endEditing(true)
+	@IBAction func startStopRecording() {
 		SFSpeechRecognizer.requestAuthorization { [weak self] authStatus in
 			guard let self = self else { return }
 			
@@ -34,11 +51,11 @@ extension TranslateViewController {
 						self.recordEngine.stop()
 						self.recordRequest.endAudio()
 						self.micOverlay.isHidden = true
-						self.pair = self.pair.with(sourceText: self.micPreviewLabel.text ?? "")
-						self.textInputView.becomeFirstResponder()
+						self.selectedPair = TextPair(sourceText: self.micPreviewLabel.text ?? "", sourceLang: nil, destText: "", destLang: PreferencesController.shared.lang)
+						self.performSegue(withIdentifier: "unwind", sender: self)
 					}
 					else {
-						self.micPreviewLabel.text = ""
+						self.micPreviewLabel.text = "..."
 						do {
 							try self.startRecording()
 							self.micOverlay.isHidden = false
@@ -54,7 +71,7 @@ extension TranslateViewController {
 			}
 		}
 	}
-	
+
 	private func startRecording() throws {
 		
 		recordTask?.cancel()
@@ -85,5 +102,13 @@ extension TranslateViewController {
 		recordEngine.prepare()
 		try recordEngine.start()
 		self.micOverlay.isHidden = false
+	}
+
+	@IBAction func cancel() {
+		recordEngine.stop()
+		recordRequest.endAudio()
+		recordEngine.inputNode.removeTap(onBus: 0)
+		recordTask?.cancel()
+		performSegue(withIdentifier: "unwind", sender: self)
 	}
 }
