@@ -36,3 +36,4 @@ fastlane/build_output
 fastlane/test_output
 fastlane/report.xml
 
+codesigndoc_exports
