@@ -9,14 +9,18 @@
 import Foundation
 
 
-struct TextPair: Codable, Equatable, Hashable {
+struct TextPair: Codable, Hashable {
 
 	let sourceText: String
 	let sourceLang: String?
 
 	let destText: String?
 	let destLang: String
+}
 
+
+extension TextPair: Equatable {
+	
 	// source text and dest lang
 	static func == (lhs: TextPair, rhs: TextPair) -> Bool {
 		return lhs.sourceText == rhs.sourceText && lhs.destLang == rhs.destLang

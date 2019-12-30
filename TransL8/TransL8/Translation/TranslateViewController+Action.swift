@@ -12,18 +12,13 @@ import UIKit
 extension TranslateViewController {
 	
 	@IBAction func clearInput() {
+		switchToInput()
 		self.pair = self.pair.with(sourceText: "", destText: "")
 		textInputView.becomeFirstResponder()
 	}
 
-	@IBAction func copyInput() {
-		guard let pair = PreferencesController.shared.pairCache.first else { return }
-
-		self.pair = pair
-		self.textInputView.becomeFirstResponder()
-	}
-
 	@IBAction func shareOutput() {
+		switchToOutput()
 		guard let text = pair.destText, !text.isEmpty else { return }
 
 		let shareSheet = UIActivityViewController(activityItems: [text], applicationActivities: nil)
@@ -41,7 +36,7 @@ extension TranslateViewController {
 	@IBAction func translate() {
 		guard !pair.sourceText.isEmpty else { return }
 		
-		view.endEditing(true)
+		switchToOutput()
 		pair = pair.with(destText: "")
 		Root.shared.isBusy = true
 		engine.translate(pair) { [weak self] result in

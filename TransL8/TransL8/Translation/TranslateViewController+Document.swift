@@ -13,6 +13,7 @@ import MobileCoreServices
 extension TranslateViewController: UIDocumentPickerDelegate {
 		
 	@IBAction func pickDocument() {
+		switchToInput()
 		let picker = UIDocumentPickerViewController(documentTypes: [kUTTypeText as String], in: .import)
 		picker.allowsMultipleSelection = false
 		picker.delegate = self

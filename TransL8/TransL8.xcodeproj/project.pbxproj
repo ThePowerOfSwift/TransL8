@@ -17,6 +17,7 @@
 		DE0DBE4B23AE5A44005E2570 /* Onboarding.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE0DBE4223AE5A44005E2570 /* Onboarding.xcassets */; };
 		DE0DBE4D23AE5CCD005E2570 /* OnboardingIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE4C23AE5CCC005E2570 /* OnboardingIntroViewController.swift */; };
 		DE0DBE4F23AE6740005E2570 /* UIViewController+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE4E23AE6740005E2570 /* UIViewController+Embed.swift */; };
+		DE1DE62F23B9EA7100518AFF /* TranslateViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1DE62E23B9EA7100518AFF /* TranslateViewController+Keyboard.swift */; };
 		DE42841823B8F23100D7013D /* TranslateViewController+Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42841723B8F23100D7013D /* TranslateViewController+Document.swift */; };
 		DE42841B23B8F6D800D7013D /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42841A23B8F6D800D7013D /* RecordViewController.swift */; };
 		DE42841D23B8FB8C00D7013D /* TextPairSelectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42841C23B8FB8C00D7013D /* TextPairSelectable.swift */; };
@@ -147,6 +148,7 @@
 		DE0DBE4223AE5A44005E2570 /* Onboarding.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Onboarding.xcassets; sourceTree = "<group>"; };
 		DE0DBE4C23AE5CCC005E2570 /* OnboardingIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingIntroViewController.swift; sourceTree = "<group>"; };
 		DE0DBE4E23AE6740005E2570 /* UIViewController+Embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Embed.swift"; sourceTree = "<group>"; };
+		DE1DE62E23B9EA7100518AFF /* TranslateViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslateViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		DE42841723B8F23100D7013D /* TranslateViewController+Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslateViewController+Document.swift"; sourceTree = "<group>"; };
 		DE42841A23B8F6D800D7013D /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		DE42841C23B8FB8C00D7013D /* TextPairSelectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPairSelectable.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				DE93D86E23AD7DCE00FC9D74 /* TranslateViewController+Scan.swift */,
 				DE93D87023AD7DCE00FC9D74 /* TranslateViewController+Speak.swift */,
 				DE42841723B8F23100D7013D /* TranslateViewController+Document.swift */,
+				DE1DE62E23B9EA7100518AFF /* TranslateViewController+Keyboard.swift */,
 				DE42841C23B8FB8C00D7013D /* TextPairSelectable.swift */,
 			);
 			path = Translation;
@@ -763,6 +766,7 @@
 				DE42841823B8F23100D7013D /* TranslateViewController+Document.swift in Sources */,
 				DE0DBE4723AE5A44005E2570 /* OnboardingApiKeyViewController.swift in Sources */,
 				DE93D89823AD7DCE00FC9D74 /* Data+JSONDecode.swift in Sources */,
+				DE1DE62F23B9EA7100518AFF /* TranslateViewController+Keyboard.swift in Sources */,
 				DE46DDE223B2401800056919 /* HistoryViewController.swift in Sources */,
 				DE93D88823AD7DCE00FC9D74 /* PreferencesController.swift in Sources */,
 				DE42841B23B8F6D800D7013D /* RecordViewController.swift in Sources */,
@@ -1043,7 +1047,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TransL8/TransL8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = TransL8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -1054,7 +1058,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8;
 				PRODUCT_NAME = TransL8;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1066,7 +1070,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TransL8/TransL8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = TransL8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -1077,7 +1081,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8;
 				PRODUCT_NAME = TransL8;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

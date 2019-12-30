@@ -31,7 +31,7 @@ extension TranslateViewController: VNDocumentCameraViewControllerDelegate {
 	}
 	
 	@IBAction func scanImageInput() {
-		view.endEditing(true)
+		switchToInput()
 		let documentCameraViewController = VNDocumentCameraViewController()
 		documentCameraViewController.delegate = self
 		present(documentCameraViewController, animated: true)

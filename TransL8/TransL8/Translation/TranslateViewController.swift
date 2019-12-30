@@ -14,6 +14,7 @@ import Speech
 
 class TranslateViewController: UIViewController {
 	
+	@IBOutlet weak var inputContainer: UIView!
 	@IBOutlet weak var textInputView: UITextView!
 	@IBOutlet weak var documentInputButton: UIButton!
 	@IBOutlet weak var cameraInputButton: UIButton!
@@ -23,9 +24,12 @@ class TranslateViewController: UIViewController {
 	
 	@IBOutlet weak var translateButton: UIButton!
 	
+	@IBOutlet weak var outputContainer: UIView!
 	@IBOutlet weak var textOutputView: UITextView!
 	@IBOutlet weak var shareOutputButton: UIButton!
 	@IBOutlet weak var speakOutputButton: UIButton!
+	
+	@IBOutlet weak var bottomHeight: NSLayoutConstraint!
 	
 	let engine = TranslationEngine()
 	let synthesizer = AVSpeechSynthesizer()
@@ -35,9 +39,12 @@ class TranslateViewController: UIViewController {
 	var scanRequests = [VNRequest]()
 	let scanQueue = DispatchQueue(label: "ScanQueue", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
 	var scannedText = ""
+	
+	var animationDuration: TimeInterval = 0.0
+	var animationOptions: UIView.AnimationOptions = UIView.AnimationOptions.layoutSubviews
 
 	lazy var enabledColor = UIView().tintColor
-	lazy var disabledColor = UIColor.lightGray.withAlphaComponent(0.2)
+	lazy var disabledColor = UIColor.lightGray.withAlphaComponent(0.5)
 
 	var pair: TextPair = TextPair(sourceText: "", sourceLang: nil, destText: "", destLang: PreferencesController.shared.lang) {
 		didSet {
@@ -48,7 +55,7 @@ class TranslateViewController: UIViewController {
 			let hasInput = !pair.sourceText.isEmpty
 			clearInputButton.isHidden = !hasInput
 			translateButton.isEnabled = hasInput
-			translateButton.setTitle(pair.destLang, for: .normal)
+//			translateButton.setTitle(pair.destLang, for: .normal)
 			translateButton.backgroundColor = hasInput ? enabledColor : disabledColor
 
 			micInputButton.isEnabled = record?.isAvailable ?? false
@@ -74,6 +81,8 @@ class TranslateViewController: UIViewController {
 		super.viewDidLoad()
 		
 		setupScan()
+		setupKeyboard()
+		switchToInput()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -84,14 +93,15 @@ class TranslateViewController: UIViewController {
 				pair = pair.with(sourceText: text)
 			}
 			else {
-				textInputView.becomeFirstResponder()
+				switchToInput()
 			}
 		}
 	}
 
 	@IBAction func unwind(unwindSegue: UIStoryboardSegue) {
-		if let vc = unwindSegue.source as? TextPairSelectable, let selectedPair = vc.selectedPair {
-			pair = selectedPair
+		if let object = unwindSegue.source as? TextPairSelectable, let selectedPair = object.selectedPair {
+			switchToInput()
+			pair = selectedPair.with(destLang: PreferencesController.shared.lang)
 		}
 		
 		if unwindSegue.source is PreferencesViewController {
@@ -99,8 +109,24 @@ class TranslateViewController: UIViewController {
 		}
 	}
 
+	@IBAction func switchToInput() {
+		view.bringSubviewToFront(inputContainer)
+		textInputView.becomeFirstResponder()
+		inputContainer.alpha = 1
+		outputContainer.alpha = 0.5
+	}
+
+	@IBAction func switchToOutput() {
+		view.bringSubviewToFront(outputContainer)
+		textInputView.resignFirstResponder()
+		hideKeyboard()
+		inputContainer.alpha = 0.5
+		outputContainer.alpha = 1
+	}
+
 	@IBAction func tapBackground(_ sender: UITapGestureRecognizer) {
-		view.endEditing(true)
+		textInputView.resignFirstResponder()
+		hideKeyboard()
 	}
 }
 
@@ -109,5 +135,9 @@ extension TranslateViewController: UITextViewDelegate {
 
 	func textViewDidChange(_ textView: UITextView) {
 		pair = pair.with(sourceText: textView.text)
+	}
+
+	func textViewDidBeginEditing(_ textView: UITextView) {
+		switchToInput()
 	}
 }

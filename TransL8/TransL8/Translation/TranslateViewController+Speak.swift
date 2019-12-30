@@ -13,6 +13,7 @@ import AVFoundation
 extension TranslateViewController {
 
 	@IBAction func speakOutput() {
+		switchToOutput()
 		guard let text = pair.destText, !text.isEmpty else { return }
 
 		let langMapping = ["EN": "en-US",
