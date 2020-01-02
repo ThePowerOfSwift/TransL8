@@ -1,9 +1,5 @@
 # TransL8
 
-Simple iOS client for translating via [DeepL](https://www.deepl.com).
-
-## Idea
-
 I've enjoyed and used the great translation service from [DeepL](https://www.deepl.com) a lot recently but could not find a simple yet deeply integrated mobile app for it. Hence this project was born:
 
 - provide a straight forward mobile client to the [DeepL](https://www.deepl.com) translation service
@@ -41,6 +37,7 @@ The UI is bascially driven by functional needs (and I am no designer anyway), bu
 - this layered UI gives a chance to focus/defocus 1st level and 2nd level action icons as well
 - sadly the global "translate action button" moved into the lower-left corner
 - accessibility should work but untested (as much as RTL)
+- dark mode support (due to system components only atm)
 
 ## General client server observations
 
@@ -56,7 +53,7 @@ With [VisionKit](https://developer.apple.com/documentation/visionkit) you can ta
 
 - `VisionKit` provides a powerful default `VNDocumentCameraViewController` which you create, assign yourself as a delegate and present modally to the user
 - the user can take pictures, selects (skewed) rectangular parts to be scanned and even supports multiple page documents
-- providing a custom user flow or different OCR mechanics is possible but obviously takes way more effort to implement (thanks Apple)
+- providing a custom user flow or different OCR mechanics is possible but obviously takes way more effort to implement
 - sadly the UI of this powerful component can hardly by customized nor its behaviour (and I'm missing the loupe as I miss it everywhere in iOS 13)
 
 This feature is based on [Apples sample code](https://developer.apple.com/documentation/vision/locating_and_displaying_recognized_text_on_a_document).
