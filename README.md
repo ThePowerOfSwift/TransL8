@@ -20,6 +20,7 @@ For quite some time, Apple is extending Foundation and UIKit with powerful sibli
 - [Diffable Data Source](#diffable-data-source)
 - [Context Menus](#context-menus)
 - using [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/) - me likes [IconFonts](https://github.com/omichde/BOMFeedback/blob/master/BOMFeedback/Feedback/Feedback-Regular.otf) anyway
+- [Property Wrapper](#property-wrapper)
 - [Catalyst](#catalyst) = open
 - drag&drop support on iPads = open
 - x-url-mechanics = open
@@ -91,6 +92,10 @@ Overall this is a clean and powerful API, it's simple to start with and works we
 
 Currently the history feature does not use it anymore, because an independent table view controller offers deleting of individual rows (something you cannot do in a context menu). But maybe the target language selection will move from the preferences towards a context menu in the future...
 
+## Property Wrapper
+
+Being a big fan of property getters and setters for blackboxing the internals of property handling, I was intrigued by `@propertyWrapper`s. After a nice [introduction around the mechanics and syntax](https://swiftsenpai.com/swift/create-the-perfect-userdefaults-wrapper-using-property-wrapper/), it helped to make the preference handling way more readable and compact and generic at the same time (`Codable` for the rescue). As a result, TransL8 now has as property wrapper around `UserDefault` and the `keychain` by means of [KeychainSwift](https://github.com/evgenyneu/keychain-swift) - even with default values.
+
 ## Catalyst
 
 Intrigued by this "one switch"? Me too so I've enabled it but the UX is very alien to macOS - as expected. Long journey ahead...
@@ -99,11 +104,11 @@ Intrigued by this "one switch"? Me too so I've enabled it but the UX is very ali
 
 Integrating a feature into others app live-cycle and user flows can be achieved by system extension for quite some time now. Sadly they are sometimes limited beyond the ususal app sandbox, but I wanted to dig deeper, how far these extension could go, wether the API has evolved over the years and ultimately what value they bring to the user:
 
-- [Keyboard extension](#keyboard-extension) = nope, see below
+- [Keyboard extension](#keyboard-extension) = nope
 - [Action extension](#action-extension) = done, simplified translation interface
 - [Share extension](#share-extension) = done, direct and fast flow
 - [Today Extension/Widget](#today-extension) = nope
-- [Document Provider Extension](#file-provider-extension) = done, using `DocumentPicker` as well
+- [Document Provider Extension](#file-provider-extension) = done, leveraging `DocumentPicker` as well
 - Siri intents (open)
 
 ### Keyboard Extension
