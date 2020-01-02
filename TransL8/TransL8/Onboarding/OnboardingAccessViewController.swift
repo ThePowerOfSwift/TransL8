@@ -22,11 +22,15 @@ class OnboardingAccessViewController: UIViewController, SFSafariViewControllerDe
 		present(web, animated: true)
 	}
 
+	@IBAction func skip(_ sender: Any) {
+		performSegue(withIdentifier: "showApiKey", sender: self)
+	}
+
 	func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
 		
 		if let text = UIPasteboard.general.string?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines), !text.isEmpty, let domainNavigationController = navigationController as? OnboardingNavigationController {
 			domainNavigationController.apiKey = text
-			performSegue(withIdentifier: "showApiKey", sender: nil)
+			performSegue(withIdentifier: "showApiKey", sender: self)
 		}
 		else {
 			Root.shared.showBanner(message: "API key missing")

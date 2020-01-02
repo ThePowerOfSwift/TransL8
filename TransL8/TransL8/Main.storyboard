@@ -690,9 +690,6 @@
                         <viewLayoutGuide key="safeArea" id="AHI-Us-sf1"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="b7f-42-D8K"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTtitleKey" value="preference_mite_title"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="apiKeyView" destination="gsu-zM-7ta" id="tYN-Om-kIy"/>
                         <outlet property="languageSwitch" destination="7G2-JA-fHM" id="IeG-vx-Hhw"/>

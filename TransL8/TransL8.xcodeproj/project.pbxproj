@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,7 +47,7 @@
 		DEA3425F23B6285C00BD4DBF /* FileProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3425E23B6285C00BD4DBF /* FileProviderExtension.swift */; };
 		DEA3426123B6285C00BD4DBF /* FileProviderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3426023B6285C00BD4DBF /* FileProviderItem.swift */; };
 		DEA3426323B6285C00BD4DBF /* FileProviderEnumerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3426223B6285C00BD4DBF /* FileProviderEnumerator.swift */; };
-		DEA3427723B6285C00BD4DBF /* TransL8 History.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DEA3425C23B6285C00BD4DBF /* TransL8 History.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DEA3427723B6285C00BD4DBF /* TransL8 History.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DEA3425C23B6285C00BD4DBF /* TransL8 History.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DEA3427E23B62FE800BD4DBF /* TextPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D87323AD7DCE00FC9D74 /* TextPair.swift */; };
 		DEA3427F23B6321600BD4DBF /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86C23AD7DCE00FC9D74 /* PreferencesController.swift */; };
 		DEA3428023B6321600BD4DBF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93D86923AD7DCE00FC9D74 /* Storage.swift */; };
@@ -838,6 +838,7 @@
 /* Begin PBXTargetDependency section */
 		DEA3427623B6285C00BD4DBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = DEA3425B23B6285C00BD4DBF /* File */;
 			targetProxy = DEA3427523B6285C00BD4DBF /* PBXContainerItemProxy */;
 		};
@@ -898,6 +899,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.File;
 				PRODUCT_NAME = "TransL8 History";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -920,6 +922,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.File;
 				PRODUCT_NAME = "TransL8 History";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1048,6 +1051,7 @@
 				CODE_SIGN_ENTITLEMENTS = TransL8/TransL8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 15;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = TransL8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -1057,6 +1061,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8;
 				PRODUCT_NAME = TransL8;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1071,6 +1076,7 @@
 				CODE_SIGN_ENTITLEMENTS = TransL8/TransL8.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 15;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = TransL8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -1080,6 +1086,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8;
 				PRODUCT_NAME = TransL8;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1092,6 +1099,7 @@
 				CODE_SIGN_ENTITLEMENTS = Share/Share.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = Share/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1102,6 +1110,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1114,6 +1123,7 @@
 				CODE_SIGN_ENTITLEMENTS = Share/Share.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = Share/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1124,6 +1134,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1137,6 +1148,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Action/TransL8 in Action.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = Action/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1147,6 +1159,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.Action;
 				PRODUCT_NAME = "TransL8 in Action";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1160,6 +1173,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Action/TransL8 in Action.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 6ZU459JA6J;
 				INFOPLIST_FILE = Action/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1170,6 +1184,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.werk01.TransL8.Action;
 				PRODUCT_NAME = "TransL8 in Action";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

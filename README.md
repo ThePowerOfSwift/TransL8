@@ -23,10 +23,24 @@ For quite some time, Apple is extending Foundation and UIKit with powerful sibli
 - [Speech Recognition](#speech-recognition)
 - [Diffable Data Source](#diffable-data-source)
 - [Context Menus](#context-menus)
-- using [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/) - me likes [IconFonts](https://github.com/omichde/BOMFeedback/blob/master/BOMFeedback/Feedback/Feedback-Regular.otf)
-- Catalyst support (open)
-- drag&drop support on iPads (open)
-- x-url-mechanics (open)
+- using [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/) - me likes [IconFonts](https://github.com/omichde/BOMFeedback/blob/master/BOMFeedback/Feedback/Feedback-Regular.otf) anyway
+- [Catalyst](#catalyst) = open
+- drag&drop support on iPads = open
+- x-url-mechanics = open
+
+## iPad and iOS support
+
+The UI is bascially driven by functional needs (and I am no designer anyway), but let me explain some UI and UX considerations:
+
+![iPhone](Screenshots/screen-main-phone.png?raw=true)
+
+![iPad](Screenshots/screen-main-tablet.png?raw=true)
+
+- text is the main content of this app, hence there are two large text views alongside smaller action items
+- although comparing translations is sometimes valuable I do not consider it the main use case especially not on mobile, hence the two languages of a text (source and destination) are overlapping, featuring a "layered" approach in the UI
+- this layered UI gives a chance to focus/defocus 1st level and 2nd level action icons as well
+- sadly the global "translate action button" moved into the lower-left corner
+- accessibility should work but untested (as much as RTL)
 
 ## General client server observations
 
@@ -79,6 +93,10 @@ As iOS 13 provides more context menus (and favours them instead of gestures - I'
 Overall this is a clean and powerful API, it's simple to start with and works well for a lot of cases.
 
 Currently the history feature does not use it anymore, because an independent table view controller offers deleting of individual rows (something you cannot do in a context menu). But maybe the target language selection will move from the preferences towards a context menu in the future...
+
+## Catalyst
+
+Intrigued by this "one switch"? Me too so I've enabled it but the UX is very alien to macOS - as expected. Long journey ahead...
 
 ## System Extensions
 
