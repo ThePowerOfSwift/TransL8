@@ -13,7 +13,7 @@ extension TranslateViewController {
 	
 	@IBAction func clearInput() {
 		switchToInput()
-		self.pair = self.pair.with(sourceText: "", destText: "")
+		self.pair = self.pair.with(sourceText: "").with(destText: nil).with(sourceLang: nil)
 		textInputView.becomeFirstResponder()
 	}
 
@@ -25,7 +25,7 @@ extension TranslateViewController {
 		shareSheet.completionWithItemsHandler = { [weak self] (activityType, completed, items, error) in
 			guard let self = self, completed, let items = items, error == nil else { return }
 			
-			self.pair = self.pair.with(sourceText: "", destText: "")
+			self.pair = self.pair.with(sourceText: "").with(destText: nil)
 			items.extractText { (text) in
 				self.pair = self.pair.with(sourceText: self.pair.sourceText + text)
 			}

@@ -47,3 +47,28 @@ extension TranslateViewController {
 		}, completion: nil)
 	}
 }
+
+
+extension TranslateViewController: UITextViewDelegate {
+
+	func textViewDidChange(_ textView: UITextView) {
+		guard textView == textInputView else { return }
+
+		pair = pair.with(sourceText: textView.text)
+	}
+
+	func textViewDidBeginEditing(_ textView: UITextView) {
+		guard textView == textInputView else { return }
+
+		switchToInput()
+	}
+	
+	func textViewDidEndEditing(_ textView: UITextView) {
+		guard textView == textInputView else { return }
+
+		// could not find another way to let tap on textoutput pass and detect it and not interfere with frame change
+		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(100)) {
+			self.switchToOutput()
+		}
+	}
+}

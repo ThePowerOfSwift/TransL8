@@ -19,15 +19,17 @@ class TranslateViewController: UIViewController {
 	@IBOutlet weak var documentInputButton: UIButton!
 	@IBOutlet weak var cameraInputButton: UIButton!
 	@IBOutlet weak var micInputButton: UIButton!
+	@IBOutlet weak var langInputLabel: UILabel!
+	
 	@IBOutlet weak var clearInputButton: UIButton!
 	@IBOutlet weak var clipboardButton: UIBarButtonItem!
-	
 	@IBOutlet weak var translateButton: UIButton!
 	
 	@IBOutlet weak var outputContainer: UIView!
 	@IBOutlet weak var textOutputView: UITextView!
 	@IBOutlet weak var shareOutputButton: UIButton!
 	@IBOutlet weak var speakOutputButton: UIButton!
+	@IBOutlet weak var langOutputLabel: UILabel!
 	
 	@IBOutlet weak var bottomHeight: NSLayoutConstraint!
 	
@@ -52,15 +54,14 @@ class TranslateViewController: UIViewController {
 			if textInputView.text != source {
 				textInputView.text = source
 			}
+			langInputLabel.text = pair.sourceLang ?? " "
 			let hasInput = !pair.sourceText.isEmpty
 			clearInputButton.isHidden = !hasInput
-			translateButton.isEnabled = hasInput
-//			translateButton.setTitle(pair.destLang, for: .normal)
-			translateButton.backgroundColor = hasInput ? enabledColor : disabledColor
 
 			micInputButton.isEnabled = record?.isAvailable ?? false
 			micInputButton.tintColor = micInputButton.isEnabled ? enabledColor : disabledColor
 
+			langOutputLabel.text = pair.destLang
 			if let dest = pair.destText {
 				if textOutputView.text != dest {
 					textOutputView.text = dest
@@ -82,6 +83,7 @@ class TranslateViewController: UIViewController {
 		
 		setupScan()
 		setupKeyboard()
+		setupLanguage()
 		switchToInput()
 	}
 
@@ -101,7 +103,8 @@ class TranslateViewController: UIViewController {
 	@IBAction func unwind(unwindSegue: UIStoryboardSegue) {
 		if let object = unwindSegue.source as? TextPairSelectable, let selectedPair = object.selectedPair {
 			switchToInput()
-			pair = selectedPair.with(destLang: PreferencesController.shared.lang)
+			pair = selectedPair
+			PreferencesController.shared.lang = selectedPair.destLang
 		}
 		
 		if unwindSegue.source is PreferencesViewController {
@@ -127,17 +130,5 @@ class TranslateViewController: UIViewController {
 	@IBAction func tapBackground(_ sender: UITapGestureRecognizer) {
 		textInputView.resignFirstResponder()
 		hideKeyboard()
-	}
-}
-
-
-extension TranslateViewController: UITextViewDelegate {
-
-	func textViewDidChange(_ textView: UITextView) {
-		pair = pair.with(sourceText: textView.text)
-	}
-
-	func textViewDidBeginEditing(_ textView: UITextView) {
-		switchToInput()
 	}
 }

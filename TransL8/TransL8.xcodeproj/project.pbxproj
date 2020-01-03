@@ -10,6 +10,7 @@
 		09FD22EDD927F420D6141F1F /* Pods_TransL8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB0E1217208711C670C3D28 /* Pods_TransL8.framework */; };
 		33172BFB94D9B5C211BAECE8 /* Pods_Share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706B145C4F11EB3DB398303F /* Pods_Share.framework */; };
 		8C4071192D43EA2E27B1FFA3 /* Pods_Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B604017066DF14F169D2B4C0 /* Pods_Action.framework */; };
+		DE01811023BFAE8000FE34D7 /* TranslateViewController+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE01810F23BFAE8000FE34D7 /* TranslateViewController+Language.swift */; };
 		DE0DBE4323AE5A44005E2570 /* OnboardingAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE3A23AE5A44005E2570 /* OnboardingAccessViewController.swift */; };
 		DE0DBE4423AE5A44005E2570 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0DBE3B23AE5A44005E2570 /* Onboarding.storyboard */; };
 		DE0DBE4723AE5A44005E2570 /* OnboardingApiKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBE3E23AE5A44005E2570 /* OnboardingApiKeyViewController.swift */; };
@@ -141,6 +142,7 @@
 		A2A295E3F8C5851EFFC90199 /* Pods-Share.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share.release.xcconfig"; path = "Target Support Files/Pods-Share/Pods-Share.release.xcconfig"; sourceTree = "<group>"; };
 		B604017066DF14F169D2B4C0 /* Pods_Action.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Action.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B1DCCF245F9EAC2119BDAF /* Pods-TransL8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransL8.release.xcconfig"; path = "Target Support Files/Pods-TransL8/Pods-TransL8.release.xcconfig"; sourceTree = "<group>"; };
+		DE01810F23BFAE8000FE34D7 /* TranslateViewController+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TranslateViewController+Language.swift"; sourceTree = "<group>"; };
 		DE0DBE3A23AE5A44005E2570 /* OnboardingAccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingAccessViewController.swift; sourceTree = "<group>"; };
 		DE0DBE3B23AE5A44005E2570 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		DE0DBE3E23AE5A44005E2570 /* OnboardingApiKeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingApiKeyViewController.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				DE93D87023AD7DCE00FC9D74 /* TranslateViewController+Speak.swift */,
 				DE42841723B8F23100D7013D /* TranslateViewController+Document.swift */,
 				DE1DE62E23B9EA7100518AFF /* TranslateViewController+Keyboard.swift */,
+				DE01810F23BFAE8000FE34D7 /* TranslateViewController+Language.swift */,
 				DE42841C23B8FB8C00D7013D /* TextPairSelectable.swift */,
 			);
 			path = Translation;
@@ -790,6 +793,7 @@
 				DE93D88523AD7DCE00FC9D74 /* Storage.swift in Sources */,
 				DE0DBE4A23AE5A44005E2570 /* OnboardingNavigationController.swift in Sources */,
 				DE93D88723AD7DCE00FC9D74 /* PreferencesViewController.swift in Sources */,
+				DE01811023BFAE8000FE34D7 /* TranslateViewController+Language.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,15 +32,15 @@ extension TextPair {
 	func with(sourceText source: String) -> TextPair {
 		return TextPair(sourceText: source, sourceLang: sourceLang, destText: destText, destLang: destLang)
 	}
-	
-	func with(destText dest: String) -> TextPair {
+
+	func with(sourceLang lang:String?) -> TextPair {
+		return TextPair(sourceText: sourceText, sourceLang: lang, destText: destText, destLang: destLang)
+	}
+
+	func with(destText dest: String?) -> TextPair {
 		return TextPair(sourceText: sourceText, sourceLang: sourceLang, destText: dest, destLang: destLang)
 	}
-	
-	func with(sourceText source: String, destText dest: String) -> TextPair {
-		return TextPair(sourceText: source, sourceLang: sourceLang, destText: dest, destLang: destLang)
-	}
-	
+
 	func with(destLang lang:String) -> TextPair {
 		return TextPair(sourceText: sourceText, sourceLang: sourceLang, destText: destText, destLang: lang)
 	}

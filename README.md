@@ -82,15 +82,14 @@ If there is a simpler way to enable "delete rows" than [this subclassing](https:
 
 ## Context Menus
 
-As iOS 13 provides more context menus (and favours them instead of gestures - I'll miss the wobbling app icons) I wanted to explore the driving API `UIContextMenuInteraction`. The first implementation of the history feature was driven by it:
+As iOS 13 provides more context menus (and favours them instead of gestures - I'll miss the wobbling app icons) I wanted to explore the driving API `UIContextMenuInteraction`. The user can select the target language via context menu on the translation button:
 
 - the delegate of a `UIContextMenuInteraction` serves a `UIContextMenuConfiguration` which contains the list of menu entries
-- each entry provides a text-icon pair alongside a callback
+- each entry provides a text-icon-state pair alongside a callback
 - menus can be nested, provide a preview and offer some fine tuning with some more delegates
+- there is no HIG to indicate the source of a context menu (sharing the same problems like most sophisticated gestures), so I have outlined the translation button as this mimics/supports the animation once a context menu opens
 
 Overall this is a clean and powerful API, it's simple to start with and works well for a lot of cases.
-
-Currently the history feature does not use it anymore, because an independent table view controller offers deleting of individual rows (something you cannot do in a context menu). But maybe the target language selection will move from the preferences towards a context menu in the future...
 
 ## Property Wrapper
 
