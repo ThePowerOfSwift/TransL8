@@ -13,8 +13,10 @@ extension TranslateViewController {
 	
 	func setupKeyboard() {		
 		NotificationCenter.default.addObserver(self, selector: #selector(changeKeyboard(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-//		NotificationCenter.default.addObserver(self, selector: #selector(changeKeyboard(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-//		NotificationCenter.default.addObserver(self, selector: #selector(changeKeyboard(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardDidHideNotification, object: nil)
+
+		let dropInteraction = UIDropInteraction(delegate: self)
+		textOutputView.addInteraction(dropInteraction)
 	}
 
 	@objc func changeKeyboard(notification: Notification) {
@@ -40,11 +42,24 @@ extension TranslateViewController {
 		}, completion: nil)
 	}
 
-	func hideKeyboard() {
+	@objc func hideKeyboard() {
 		UIView.animate(withDuration: animationDuration, delay: 0.0, options: animationOptions, animations: {
 			self.bottomHeight.constant = 8
 			self.view.layoutIfNeeded()
 		}, completion: nil)
+	}
+}
+
+
+extension TranslateViewController: UIDropInteractionDelegate {
+	
+	func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
+
+		if session.localDragSession == nil {
+			switchToInput()
+		}
+
+		return false
 	}
 }
 
@@ -66,9 +81,9 @@ extension TranslateViewController: UITextViewDelegate {
 	func textViewDidEndEditing(_ textView: UITextView) {
 		guard textView == textInputView else { return }
 
-		// could not find another way to let tap on textoutput pass and detect it and not interfere with frame change
+		// meh, could not find another way to reliably detect hiding keyboard
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(100)) {
-			self.switchToOutput()
+			self.hideKeyboard()
 		}
 	}
 }

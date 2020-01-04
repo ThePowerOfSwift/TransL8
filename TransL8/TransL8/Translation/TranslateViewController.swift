@@ -62,16 +62,15 @@ class TranslateViewController: UIViewController {
 			micInputButton.tintColor = micInputButton.isEnabled ? enabledColor : disabledColor
 
 			langOutputLabel.text = pair.destLang
-			if let dest = pair.destText {
-				if textOutputView.text != dest {
-					textOutputView.text = dest
-				}
-				let hasOutput = !dest.isEmpty
-				shareOutputButton.isEnabled = hasOutput
-				speakOutputButton.isEnabled = hasOutput
-				shareOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
-				speakOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
+			let dest = pair.destText ?? ""
+			if textOutputView.text != dest {
+				textOutputView.text = dest
 			}
+			let hasOutput = !dest.isEmpty
+			shareOutputButton.isEnabled = hasOutput
+			speakOutputButton.isEnabled = hasOutput
+			shareOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
+			speakOutputButton.tintColor = hasOutput ? enabledColor : disabledColor
 			
 			let hasClips = !PreferencesController.shared.pairCache.isEmpty
 			clipboardButton.isEnabled = hasClips
@@ -94,9 +93,7 @@ class TranslateViewController: UIViewController {
 			if let text = UIPasteboard.general.string, !text.isEmpty {
 				pair = pair.with(sourceText: text)
 			}
-			else {
-				switchToInput()
-			}
+			switchToInput(showKeyboard: true)
 		}
 	}
 
@@ -112,19 +109,23 @@ class TranslateViewController: UIViewController {
 		}
 	}
 
-	@IBAction func switchToInput() {
+	@IBAction func switchToInput(showKeyboard: Bool = false) {
 		view.bringSubviewToFront(inputContainer)
-		textInputView.becomeFirstResponder()
+		textOutputView.isUserInteractionEnabled = false	// ensure that text outout bg taps pass and hence tap raises it
 		inputContainer.alpha = 1
 		outputContainer.alpha = 0.5
+		if showKeyboard {
+			textInputView.becomeFirstResponder()
+		}
 	}
 
 	@IBAction func switchToOutput() {
 		view.bringSubviewToFront(outputContainer)
-		textInputView.resignFirstResponder()
+		textOutputView.isUserInteractionEnabled = true
 		hideKeyboard()
 		inputContainer.alpha = 0.5
 		outputContainer.alpha = 1
+		textInputView.resignFirstResponder()
 	}
 
 	@IBAction func tapBackground(_ sender: UITapGestureRecognizer) {

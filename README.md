@@ -21,8 +21,8 @@ For quite some time, Apple is extending Foundation and UIKit with powerful sibli
 - [Context Menus](#context-menus)
 - using [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/) - me likes [IconFonts](https://github.com/omichde/BOMFeedback/blob/master/BOMFeedback/Feedback/Feedback-Regular.otf) anyway
 - [Property Wrapper](#property-wrapper)
+- [Drag & Drop](#drag-and-drop) support on iPads
 - [Catalyst](#catalyst) = open
-- drag&drop support on iPads = open
 - x-url-mechanics = open
 
 ## iPad and iOS support
@@ -94,6 +94,10 @@ Overall this is a clean and powerful API, it's simple to start with and works we
 ## Property Wrapper
 
 Being a big fan of property getters and setters for blackboxing the internals of property handling, I was intrigued by `@propertyWrapper`s. After a nice [introduction around the mechanics and syntax](https://swiftsenpai.com/swift/create-the-perfect-userdefaults-wrapper-using-property-wrapper/), it helped to make the preference handling way more readable and compact and generic at the same time (`Codable` for the rescue). As a result, TransL8 now has as property wrapper around `UserDefault` and the `keychain` by means of [KeychainSwift](https://github.com/evgenyneu/keychain-swift) - even with default values.
+
+## Drag and Drop
+
+For iPad dragging and dropping text from other apps now switches to the input text view being topmost. The `UIDropInteractionDelegate` is easy to use on this one - but apart from the smaller screen it's beyond my knowledge why there is no supported on iPhone.
 
 ## Catalyst
 
