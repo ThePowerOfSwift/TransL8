@@ -9,6 +9,8 @@
 import UIKit
 
 
+private var rootViewController: RootViewController?
+
 class Root {
   
   static let shared = Root()
@@ -30,10 +32,6 @@ class Root {
   func hideBanner() {
     rootViewController?.hideBanner()
   }
-
-  private var rootViewController: RootViewController? {
-    return UIApplication.shared.keyWindow?.rootViewController as? RootViewController
-  }
 }
 
 class RootViewController: UIViewController {
@@ -45,6 +43,13 @@ class RootViewController: UIViewController {
   @IBOutlet weak var bannerTopContraint: NSLayoutConstraint!
 
 	private var autoHideTimer: Timer?
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		rootViewController = self
+		restart()
+	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -73,12 +78,6 @@ class RootViewController: UIViewController {
       }
     }
   }
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		restart()
-	}
 
 	func restart() {
 		liftChild(contentView)

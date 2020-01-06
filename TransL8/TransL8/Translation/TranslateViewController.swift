@@ -83,11 +83,10 @@ class TranslateViewController: UIViewController {
 		setupScan()
 		setupKeyboard()
 		setupLanguage()
-		switchToInput()
 	}
 
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
 
 		if pair.sourceText.isEmpty {
 			if let text = UIPasteboard.general.string, !text.isEmpty {
@@ -109,17 +108,17 @@ class TranslateViewController: UIViewController {
 		}
 	}
 
-	@IBAction func switchToInput(showKeyboard: Bool = false) {
+	func switchToInput(showKeyboard: Bool = false) {
 		view.bringSubviewToFront(inputContainer)
 		textOutputView.isUserInteractionEnabled = false	// ensure that text outout bg taps pass and hence tap raises it
 		inputContainer.alpha = 1
 		outputContainer.alpha = 0.5
 		if showKeyboard {
-			textInputView.becomeFirstResponder()
+			textInputView.becomeFirstResponder()	// uh, catalyst is picky when to call this
 		}
 	}
 
-	@IBAction func switchToOutput() {
+	func switchToOutput() {
 		view.bringSubviewToFront(outputContainer)
 		textOutputView.isUserInteractionEnabled = true
 		hideKeyboard()
