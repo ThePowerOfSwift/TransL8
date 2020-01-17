@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fmo-Bd-fAd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fmo-Bd-fAd">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -138,21 +138,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3K9-im-cyj">
-                                <rect key="frame" x="6" y="609" width="52" height="52"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="52" id="1iT-Xq-q4b"/>
-                                    <constraint firstAttribute="height" constant="52" id="NNf-gZ-fox"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVc-7E-kq3">
-                                <rect key="frame" x="10" y="613" width="44" height="44"/>
+                                <rect key="frame" x="8" y="615" width="44" height="44"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="OJR-cW-She"/>
@@ -175,6 +162,15 @@
                                     <action selector="translate" destination="Hlg-VP-pyD" eventType="touchUpInside" id="iEL-fc-g6o"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aiy-AM-1xZ">
+                                <rect key="frame" x="36" y="644" width="16" height="14"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="8sh-Vt-ppv"/>
+                                    <constraint firstAttribute="width" constant="16" id="b4N-dy-zkP"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="8"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0T0-kf-uHD">
                                 <rect key="frame" x="315" y="52" width="52" height="52"/>
                                 <constraints>
@@ -396,18 +392,18 @@
                         <constraints>
                             <constraint firstItem="9sx-fF-io6" firstAttribute="trailing" secondItem="7ma-qx-SCX" secondAttribute="trailing" constant="52" id="2nm-jd-Erc"/>
                             <constraint firstItem="ZHn-gi-vJP" firstAttribute="trailing" secondItem="9sx-fF-io6" secondAttribute="trailing" constant="8" id="4sj-Tl-NsX"/>
+                            <constraint firstItem="aiy-AM-1xZ" firstAttribute="bottom" secondItem="QVc-7E-kq3" secondAttribute="bottom" id="BZU-c4-YjF"/>
                             <constraint firstItem="0T0-kf-uHD" firstAttribute="trailing" secondItem="9sx-fF-io6" secondAttribute="trailing" id="F1i-Q9-Mbh"/>
-                            <constraint firstItem="QVc-7E-kq3" firstAttribute="leading" secondItem="7ma-qx-SCX" secondAttribute="leading" constant="2" id="JYK-0d-wkk"/>
+                            <constraint firstItem="QVc-7E-kq3" firstAttribute="leading" secondItem="7ma-qx-SCX" secondAttribute="leading" id="JYK-0d-wkk"/>
                             <constraint firstItem="9sx-fF-io6" firstAttribute="bottom" secondItem="7ma-qx-SCX" secondAttribute="bottom" constant="52" id="NvL-Bo-Cwd"/>
-                            <constraint firstItem="3K9-im-cyj" firstAttribute="centerX" secondItem="QVc-7E-kq3" secondAttribute="centerX" id="Sum-Eb-3K0"/>
                             <constraint firstItem="0T0-kf-uHD" firstAttribute="top" secondItem="7ma-qx-SCX" secondAttribute="top" id="TBW-KL-WNy"/>
                             <constraint firstItem="7ma-qx-SCX" firstAttribute="leading" secondItem="ZHn-gi-vJP" secondAttribute="leading" constant="8" id="WGB-dW-uaS"/>
                             <constraint firstItem="ZHn-gi-vJP" firstAttribute="bottom" secondItem="9sx-fF-io6" secondAttribute="bottom" priority="750" constant="8" id="dOA-WK-EhE"/>
                             <constraint firstItem="7ma-qx-SCX" firstAttribute="top" secondItem="ZHn-gi-vJP" secondAttribute="top" constant="8" id="fn3-XV-qJ5"/>
                             <constraint firstItem="9sx-fF-io6" firstAttribute="leading" secondItem="7ma-qx-SCX" secondAttribute="leading" constant="52" id="i4m-9X-33L"/>
-                            <constraint firstItem="9sx-fF-io6" firstAttribute="bottom" secondItem="QVc-7E-kq3" secondAttribute="bottom" constant="2" id="ila-Kh-5gr"/>
+                            <constraint firstItem="9sx-fF-io6" firstAttribute="bottom" secondItem="QVc-7E-kq3" secondAttribute="bottom" id="ila-Kh-5gr"/>
+                            <constraint firstItem="aiy-AM-1xZ" firstAttribute="trailing" secondItem="QVc-7E-kq3" secondAttribute="trailing" id="rdX-Ac-rQY"/>
                             <constraint firstItem="9sx-fF-io6" firstAttribute="top" secondItem="7ma-qx-SCX" secondAttribute="top" constant="52" id="umx-rf-QA6"/>
-                            <constraint firstItem="3K9-im-cyj" firstAttribute="centerY" secondItem="QVc-7E-kq3" secondAttribute="centerY" id="vLE-hD-zci"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZHn-gi-vJP"/>
                         <connections>
@@ -742,6 +738,7 @@
     <resources>
         <image name="arrow.2.circlepath" catalog="system" width="64" height="50"/>
         <image name="arrow.turn.down.right" catalog="system" width="64" height="48"/>
+        <image name="arrowtriangle.down.fill" catalog="system" width="64" height="62"/>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
         <image name="clear" catalog="system" width="64" height="56"/>
         <image name="folder.fill" catalog="system" width="64" height="46"/>

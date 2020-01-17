@@ -92,13 +92,13 @@ class TranslateViewController: UIViewController {
 			if let text = UIPasteboard.general.string, !text.isEmpty {
 				pair = pair.with(sourceText: text)
 			}
-			switchToInput(showKeyboard: true)
+			showInput(showKeyboard: true)
 		}
 	}
 
 	@IBAction func unwind(unwindSegue: UIStoryboardSegue) {
 		if let object = unwindSegue.source as? TextPairSelectable, let selectedPair = object.selectedPair {
-			switchToInput()
+			showInput()
 			pair = selectedPair
 			PreferencesController.shared.lang = selectedPair.destLang
 		}
@@ -108,7 +108,11 @@ class TranslateViewController: UIViewController {
 		}
 	}
 
-	func switchToInput(showKeyboard: Bool = false) {
+  @objc func switchToInput() {
+    showInput()
+  }
+  
+  func showInput(showKeyboard: Bool = false) {
 		view.bringSubviewToFront(inputContainer)
 		textOutputView.isUserInteractionEnabled = false	// ensure that text outout bg taps pass and hence tap raises it
 		inputContainer.alpha = 1
@@ -118,7 +122,11 @@ class TranslateViewController: UIViewController {
 		}
 	}
 
-	func switchToOutput() {
+	@objc func switchToOutput() {
+    showOutput()
+  }
+  
+  func showOutput() {
 		view.bringSubviewToFront(outputContainer)
 		textOutputView.isUserInteractionEnabled = true
 		hideKeyboard()

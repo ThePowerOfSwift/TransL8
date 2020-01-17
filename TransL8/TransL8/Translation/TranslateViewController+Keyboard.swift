@@ -56,7 +56,7 @@ extension TranslateViewController: UIDropInteractionDelegate {
 	func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
 
 		if session.localDragSession == nil {
-			switchToInput()
+			showInput()
 		}
 
 		return false
@@ -75,7 +75,7 @@ extension TranslateViewController: UITextViewDelegate {
 	func textViewDidBeginEditing(_ textView: UITextView) {
 		guard textView == textInputView else { return }
 
-		switchToInput()
+		showInput()
 	}
 	
 	func textViewDidEndEditing(_ textView: UITextView) {
